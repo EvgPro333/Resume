@@ -1,20 +1,76 @@
-{{!-- 
-  Це леяут по замовчюванню, котрий вже містить базову структуру HTML документа
-  І котрий обгортає код container файлів для будь-яких ендпоїнтів
---}}
 <!DOCTYPE html>
 <html>
-
   <head>
-    {{!-- <title>Page name</title> --}}
-    <title>{{title}}</title>
+    {{!-- <title>{{title}}</title> --}}
+    <title>{{page.title}}</title>
     <meta charset='utf-8' />
     <link href='css/index.css' rel='stylesheet' />
   </head>
-
   <body>
-    {{!  ↓  ця кострукція показує куди шаблонізатору треба вставляти код з container файлу   --}}
-    {{{body}}}
-  </body>
+{{!--! ---------------------------------------------------------------------- --}}
+		{{#with header}}
+			<header>
+				<div>
+					<h1>{{name.firstname}} {{name.lastname}}</h1>
+				</div>
+				<div>
+					<b>{{position}}</b>
+				</div>   <br>
+				<div>
+					<em>{{salary}}</em>
+				</div>   <br>   <hr>
+			</header>
+		{{/with}}
+{{!--! ---------------------------------------------------------------------- --}}
+			<nav>
+				{{!-- <a href="/skills">Skills</a>
+				<a href="/summary">Summary</a> --}}
+				{{!-- ----------------------------------------------------- --}}
+				{{!-- {{> link text="Summary" href="/summary" }}
+				{{> link text="Skills" href="/skills" }} --}}
+				{{!-- ----------------------------------------------------- --}}
+				{{> link text="Summary" href="/summary" line=true }}
+				{{> link text="Skills" href="/skills" line=true }}
 
+			</nav>
+{{!--! ---------------------------------------------------------------------- --}}
+    {{{body}}}
+{{!--! ---------------------------------------------------------------------- --}}
+		{{#with footer}}
+			<footer>
+				<hr>
+				<br>
+
+				{{!-- {{#with social}}
+					{{> link data=email}}
+					{{> link data=phone}}
+					{{> link data=LinkedIn}}
+				{{/with}} --}}
+				{{!-- ---------------------------------------------------- --}}
+				{{!-- {{#with social}}
+					{{> link text=email.text href=email.href}}
+					{{> link text=phone.text href=phone.href}}
+					{{> link text=LinkedIn.text href=LinkedIn.href}}
+				{{/with}} --}}
+				{{!-- ---------------------------------------------------- --}}
+				<div>
+					{{#with social}}
+						{{> link text=email.text href=email.href blank=true }}
+						{{> link text=phone.text href=phone.href blank=true }}
+						{{> link text=LinkedIn.text href=LinkedIn.href blank=true }}
+					{{/with}}
+				</div>
+				<br>
+				<div>
+					{{!-- -   ????????????????????????????????? --}}
+					{{!-- <em>Copyright {{headers.name.firstname}}</em> --}}
+					{{!-- ---------------------------------------------------- --}}
+					{{!-- <em>Copyright {{../header/name/firstname}}</em> --}}
+					{{!-- ---------------------------------------------------- --}}
+					<em>Copyright by {{../header/name/firstname}} {{../header/name/lastname}}</em>
+				</div>
+			</footer>
+		{{/with}}
+{{!--! ---------------------------------------------------------------------- --}}
+  </body>
 </html>
