@@ -1,15 +1,15 @@
-{{!-- 
-Це код container файлу для summary сторінки, 
-в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
---}}
-
+{{!-- Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"--}}
 <div>
     <header>
         <div>
-            <h1>Dmytro Ivanov | Resume</h1>
+            {{!-- <h1>Dmytro Ivanov | Resume</h1> --}}
+            {{!-- <h1>{{title}}</h1> --}}
+            <h1>{{name.firstname}} {{name.lastname}}</h1>
         </div>
         <div>
-            <b>Junior Fullstack JS Developer</b>
+            {{!-- <b>Junior Fullstack JS Developer</b> --}}
+            <b>{{position}}</b>
         </div>
         <br>
         <hr>
@@ -46,14 +46,59 @@
     <footer>
         <hr>
         <br>
-        <a href="mailto:dmytro@mail.com">dmytro@mail.com</a> /
-        <a href="tel:+380670000123">+380670000123</a> /
-        <a href="https://www.linkedin.com/in/dmytro-test" target="_blank">LinkedIn</a>
+        {{!-- <a href="mailto:dmytro@mail.com">dmytro@mail.com</a> / --}}
+        {{!-- <a href="{{social.email.href}}">{{social.email.text}}</a> / --}}
+
+        {{!-- <a href="tel:+380670000123">+380670000123</a> / --}}
+        {{!-- <a href="{{social.phone.href}}">{{social.phone.text}}</a> / --}}
+
+        {{!-- <a href="https://www.linkedin.com/in/dmytro-test" target="_blank">LinkedIn</a> --}}
+        {{!-- <a href="{{social.LinkedIn.href}}" target="_blank">{{social.LinkedIn.text}}</a> --}}
+
+				{{!-- {{#with social}}
+					<a href="{{email.href}}">{{email.text}}</a> /
+					<a href="{{phone.href}}">{{phone.text}}</a> /
+					<a href="{{LinkedIn.href}}" target="_blank">{{LinkedIn.text}}</a>
+				{{/with}} --}}
+
+				{{!-- {{#with social}}
+					{{#with email}}
+						<a href="{{href}}">{{text}}</a> /
+					{{/with}}
+					{{#with phone}}
+						{{<a href="{{href}}">{{text}}</a> /}}
+					{{/with}}
+					{{#with LinkedIn}}
+						<a href="{{href}}" target="_blank">{{text}}</a>
+					{{/with}}
+				{{/with}} --}}
+
+				{{!-- {{#with social}}
+					{{#with email}}
+						{{> link}}
+					{{/with}}
+					{{#with phone}}
+						{{> link}}
+					{{/with}}
+					{{#with LinkedIn}}
+						{{> link}}
+					{{/with}}
+				{{/with}} --}}
+
+				{{!-- {{#with social}}
+						{{> link href=email.href text=email.text}}
+						{{> link href=phone.href text=phone.text}}
+						{{> link href=LinkedIn.href text=LinkedIn.text}}
+				{{/with}} --}}
+
+				{{#with social}}
+						{{> link data=email}}
+						{{> link data=phone}}
+						{{> link data=LinkedIn}}
+				{{/with}}
+
     </footer>
 
 </div>
-
-{{!-- 
-    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
-    Адже наш layout/default.hbs має вже структуру HTML
---}}
+{{!-- Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML--}}
