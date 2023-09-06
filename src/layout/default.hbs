@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    {{!-- <title>{{title}}</title> --}}
     <title>{{page.title}}</title>
     <meta charset='utf-8' />
     <link href='css/index.css' rel='stylesheet' />
@@ -18,19 +17,20 @@
 				</div>   <br>
 				<div>
 					<em>{{salary}}</em>
-				</div>   <br>   <hr>
+				</div>  <br>
+				<div>
+					<address>
+						{{address}}
+					</address>
+				</div>  <br>
+				<br>   <hr>
 			</header>
 		{{/with}}
 {{!--! ---------------------------------------------------------------------- --}}
 			<nav>
-				{{!-- <a href="/skills">Skills</a>
-				<a href="/summary">Summary</a> --}}
-				{{!-- ----------------------------------------------------- --}}
-				{{!-- {{> link text="Summary" href="/summary" }}
-				{{> link text="Skills" href="/skills" }} --}}
-				{{!-- ----------------------------------------------------- --}}
 				{{> link text="Summary" href="/summary" line=true }}
 				{{> link text="Skills" href="/skills" line=true }}
+				{{> link text="Education" href="/education" line=true }}
 
 			</nav>
 {{!--! ---------------------------------------------------------------------- --}}
@@ -40,19 +40,6 @@
 			<footer>
 				<hr>
 				<br>
-
-				{{!-- {{#with social}}
-					{{> link data=email}}
-					{{> link data=phone}}
-					{{> link data=LinkedIn}}
-				{{/with}} --}}
-				{{!-- ---------------------------------------------------- --}}
-				{{!-- {{#with social}}
-					{{> link text=email.text href=email.href}}
-					{{> link text=phone.text href=phone.href}}
-					{{> link text=LinkedIn.text href=LinkedIn.href}}
-				{{/with}} --}}
-				{{!-- ---------------------------------------------------- --}}
 				<div>
 					{{#with social}}
 						{{> link text=email.text href=email.href blank=true }}
@@ -62,12 +49,12 @@
 				</div>
 				<br>
 				<div>
-					{{!-- -   ????????????????????????????????? --}}
-					{{!-- <em>Copyright {{headers.name.firstname}}</em> --}}
-					{{!-- ---------------------------------------------------- --}}
-					{{!-- <em>Copyright {{../header/name/firstname}}</em> --}}
-					{{!-- ---------------------------------------------------- --}}
 					<em>Copyright by {{../header/name/firstname}} {{../header/name/lastname}}</em>
+				</div> <br>
+				<div>
+					<address>
+						{{../header/address}}
+					</address>
 				</div>
 			</footer>
 		{{/with}}

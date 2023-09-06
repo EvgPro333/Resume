@@ -1,30 +1,16 @@
-// Підключаємо технологію express для back-end сервера
 const express = require('express')
-// Cтворюємо роутер - місце, куди ми підключаємо ендпоїнти
 const router = express.Router()
 
-// ================================================================
-
-// router.get Створює нам один ентпоїнт
-
-//           ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/', function (req, res) {
-  // res.render генерує нам HTML сторінку
-
-  //            ↙ cюди вводимо назву файлу з сontainer
   res.render('index', {})
-  //                  ↑↑ сюди вводимо JSON дані
 })
-
-// ================================================================
-
+// ================================================================ summary
 router.get('/summary', function (req, res) {
   res.render('summary', {
     page: {
       title: 'resume',
     },
     // !                          end page   ----------------------
-
     header: {
       name: {
         firstname: 'Dmytro',
@@ -32,9 +18,9 @@ router.get('/summary', function (req, res) {
       },
       position: 'Junior Fullstack JS Developer',
       salary: '600$ в місяць',
+      address: 'Ukraine с.Mykolaiv',
     },
     // !                          end header   ----------------------
-
     main: {
       summary: {
         title: 'Summary',
@@ -50,7 +36,6 @@ router.get('/summary', function (req, res) {
       },
     },
     // !                          end main   ----------------------
-
     footer: {
       social: {
         email: {
@@ -70,16 +55,13 @@ router.get('/summary', function (req, res) {
     // !                          end footer   ----------------------
   })
 })
-
-// ================================================================
-
+// ================================================================ skills
 router.get('/skills', function (req, res) {
   res.render('skills', {
     page: {
       title: 'resume',
     },
     // !                          end page   ----------------------
-
     header: {
       name: {
         firstname: 'Dmytro',
@@ -87,9 +69,9 @@ router.get('/skills', function (req, res) {
       },
       position: 'Junior Fullstack JS Developer',
       salary: '600$ в місяць',
+      address: 'Ukraine с.Mykolaiv',
     },
     // !                          end header   ----------------------
-
     main: {
       skills: [
         'HTML',
@@ -101,7 +83,58 @@ router.get('/skills', function (req, res) {
       ],
     },
     // !                          end main   ----------------------
-
+    footer: {
+      social: {
+        email: {
+          text: 'dmytro@mail.com',
+          href: 'mailto:dmytro@mail.com',
+        },
+        phone: {
+          text: '+380670000123',
+          href: 'tel:+380670000123',
+        },
+        LinkedIn: {
+          text: 'LinkedIn',
+          href: 'https://www.linkedin.com/in/dmytro-test',
+        },
+      },
+      //   // ???????? copyright типу так повинно було бути - не виходить!!!
+      //   headers: {
+      //     name: {
+      //       firstname: 'Dmytroooooo',
+      //     },
+      //   },
+    },
+    // !                          end footer   ----------------------
+  })
+})
+// ================================================================ education
+router.get('/education', function (req, res) {
+  res.render('education', {
+    page: {
+      title: 'resume',
+    },
+    // !                          end page   ----------------------
+    header: {
+      name: {
+        firstname: 'Dmytro',
+        lastname: 'Ivanov',
+      },
+      position: 'Junior Fullstack JS Developer',
+      salary: '600$ в місяць',
+      address: 'Ukraine с.Mykolaiv',
+    },
+    // !                          end header   ----------------------
+    main: {
+      educations: [
+        'Дитсадок',
+        'Середня школа',
+        'Університет',
+        'Гімназія ім.Н.Д.Діор',
+        'Автошкола',
+      ],
+    },
+    // !                          end main   ----------------------
     footer: {
       social: {
         email: {
@@ -128,7 +161,4 @@ router.get('/skills', function (req, res) {
   })
 })
 
-// ================================================================
-
-// Підключаємо роутер до бек-енду
 module.exports = router
