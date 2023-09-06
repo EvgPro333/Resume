@@ -150,12 +150,6 @@ router.get('/education', function (req, res) {
           href: 'https://www.linkedin.com/in/dmytro-test',
         },
       },
-      //   // ???????? copyright типу так повинно було бути - не виходить!!!
-      //   headers: {
-      //     name: {
-      //       firstname: 'Dmytroooooo',
-      //     },
-      //   },
     },
     // !                          end footer   ----------------------
   })
