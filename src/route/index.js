@@ -1,5 +1,37 @@
 const express = require('express')
 const router = express.Router()
+// ================================================================ my var
+// var address = 'Ukraine, Mykolaiv'
+//↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑
+var header = {
+  name: {
+    firstname: 'Dmytro',
+    lastname: 'Ivanov',
+  },
+  position: 'Junior Fullstack JS Developer',
+  salary: '600$ в місяць',
+  address: 'Ukraine, Mykolaiv',
+  //↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑
+  // address,
+}
+
+var footer = {
+  social: {
+    email: {
+      text: 'dmytro@mail.com',
+      href: 'mailto:dmytro@mail.com',
+    },
+    phone: {
+      text: '+380670000123',
+      href: 'tel:+380670000123',
+    },
+    LinkedIn: {
+      text: 'LinkedIn',
+      href: 'https://www.linkedin.com/in/dmytro-test',
+    },
+  },
+}
+// ================================================================ my var
 
 router.get('/', function (req, res) {
   res.render('index', {})
@@ -8,18 +40,24 @@ router.get('/', function (req, res) {
 router.get('/summary', function (req, res) {
   res.render('summary', {
     page: {
-      title: 'resume',
+      // title: 'resume',
+      //↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑
+      title: 'resume | summary',
     },
     // !                          end page   ----------------------
-    header: {
-      name: {
-        firstname: 'Dmytro',
-        lastname: 'Ivanov',
-      },
-      position: 'Junior Fullstack JS Developer',
-      salary: '600$ в місяць',
-      address: 'Ukraine с.Mykolaiv',
-    },
+    // header: {
+    // name: {
+    // firstname: 'Dmytro',
+    // lastname: 'Ivanov',
+    // },
+    // position: 'Junior Fullstack JS Developer',
+    // salary: '600$ в місяць',
+    // address: 'Ukraine, Mykolaiv',
+    //↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑
+    // address,
+    // },
+    //↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑
+    header,
     // !                          end header   ----------------------
     main: {
       summary: {
@@ -36,22 +74,24 @@ router.get('/summary', function (req, res) {
       },
     },
     // !                          end main   ----------------------
-    footer: {
-      social: {
-        email: {
-          text: 'dmytro@mail.com',
-          href: 'mailto:dmytro@mail.com',
-        },
-        phone: {
-          text: '+380670000123',
-          href: 'tel:+380670000123',
-        },
-        LinkedIn: {
-          text: 'LinkedIn',
-          href: 'https://www.linkedin.com/in/dmytro-test',
-        },
-      },
-    },
+    // footer: {
+    // social: {
+    // email: {
+    // text: 'dmytro@mail.com',
+    // href: 'mailto:dmytro@mail.com',
+    // },
+    // phone: {
+    // text: '+380670000123',
+    // href: 'tel:+380670000123',
+    // },
+    // LinkedIn: {
+    // text: 'LinkedIn',
+    // href: 'https://www.linkedin.com/in/dmytro-test',
+    // },
+    // },
+    // },
+    //↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑
+    footer,
     // !                          end footer   ----------------------
   })
 })
@@ -59,52 +99,98 @@ router.get('/summary', function (req, res) {
 router.get('/skills', function (req, res) {
   res.render('skills', {
     page: {
-      title: 'resume',
+      // title: 'resume',
+      //↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑
+      title: 'resume | skills',
     },
     // !                          end page   ----------------------
-    header: {
-      name: {
-        firstname: 'Dmytro',
-        lastname: 'Ivanov',
-      },
-      position: 'Junior Fullstack JS Developer',
-      salary: '600$ в місяць',
-      address: 'Ukraine с.Mykolaiv',
-    },
+    // header: {
+    // name: {
+    // firstname: 'Dmytro',
+    // lastname: 'Ivanov',
+    // },
+    // position: 'Junior Fullstack JS Developer',
+    // salary: '600$ в місяць',
+    // address: 'Ukraine, Mykolaiv',
+    //↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑
+    // address,
+    // },
+    //↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑
+    header,
     // !                          end header   ----------------------
     main: {
+      // skills: [
+      //   'HTML',
+      //   'HaldleBars',
+      //   'VS Code',
+      //   'Git',
+      //   'Terminal',
+      //   'NPM',
+      // ],
       skills: [
-        'HTML',
-        'HaldleBars',
-        'VS Code',
-        'Git',
-        'Terminal',
-        'NPM',
+        {
+          name: 'HTML',
+          point: 8,
+          isTop: true,
+        },
+
+        {
+          name: 'HaldleBars',
+          point: 6,
+          isTop: false,
+        },
+
+        {
+          name: 'VS Code',
+          point: 9,
+        },
+
+        {
+          name: 'Git',
+          point: 10,
+          isTop: true,
+        },
+
+        {
+          name: 'Terminal',
+          point: 9,
+        },
+
+        {
+          name: 'NPM',
+          point: 8,
+        },
+
+        {
+          name: 'React.js',
+          point: 0,
+        },
+
+        {
+          name: 'PHP',
+          point: null,
+        },
       ],
     },
     // !                          end main   ----------------------
-    footer: {
-      social: {
-        email: {
-          text: 'dmytro@mail.com',
-          href: 'mailto:dmytro@mail.com',
-        },
-        phone: {
-          text: '+380670000123',
-          href: 'tel:+380670000123',
-        },
-        LinkedIn: {
-          text: 'LinkedIn',
-          href: 'https://www.linkedin.com/in/dmytro-test',
-        },
-      },
-      //   // ???????? copyright типу так повинно було бути - не виходить!!!
-      //   headers: {
-      //     name: {
-      //       firstname: 'Dmytroooooo',
-      //     },
-      //   },
-    },
+    // footer: {
+    // social: {
+    // email: {
+    // text: 'dmytro@mail.com',
+    // href: 'mailto:dmytro@mail.com',
+    // },
+    // phone: {
+    // text: '+380670000123',
+    // href: 'tel:+380670000123',
+    // },
+    // LinkedIn: {
+    // text: 'LinkedIn',
+    // href: 'https://www.linkedin.com/in/dmytro-test',
+    // },
+    // },
+    // },
+    //↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑
+    footer,
     // !                          end footer   ----------------------
   })
 })
@@ -112,18 +198,24 @@ router.get('/skills', function (req, res) {
 router.get('/education', function (req, res) {
   res.render('education', {
     page: {
-      title: 'resume',
+      // title: 'resume',
+      //↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑
+      title: 'resume | education',
     },
     // !                          end page   ----------------------
-    header: {
-      name: {
-        firstname: 'Dmytro',
-        lastname: 'Ivanov',
-      },
-      position: 'Junior Fullstack JS Developer',
-      salary: '600$ в місяць',
-      address: 'Ukraine с.Mykolaiv',
-    },
+    // header: {
+    // name: {
+    // firstname: 'Dmytro',
+    // lastname: 'Ivanov',
+    // },
+    // position: 'Junior Fullstack JS Developer',
+    // salary: '600$ в місяць',
+    // address: 'Ukraine, Mykolaiv',
+    //↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑
+    // address,
+    // },
+    //↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑
+    header,
     // !                          end header   ----------------------
     main: {
       educations: [
@@ -135,22 +227,24 @@ router.get('/education', function (req, res) {
       ],
     },
     // !                          end main   ----------------------
-    footer: {
-      social: {
-        email: {
-          text: 'dmytro@mail.com',
-          href: 'mailto:dmytro@mail.com',
-        },
-        phone: {
-          text: '+380670000123',
-          href: 'tel:+380670000123',
-        },
-        LinkedIn: {
-          text: 'LinkedIn',
-          href: 'https://www.linkedin.com/in/dmytro-test',
-        },
-      },
-    },
+    // footer: {
+    // social: {
+    // email: {
+    // text: 'dmytro@mail.com',
+    // href: 'mailto:dmytro@mail.com',
+    // },
+    // phone: {
+    // text: '+380670000123',
+    // href: 'tel:+380670000123',
+    // },
+    // LinkedIn: {
+    // text: 'LinkedIn',
+    // href: 'https://www.linkedin.com/in/dmytro-test',
+    // },
+    // },
+    // },
+    //↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑
+    footer,
     // !                          end footer   ----------------------
   })
 })
