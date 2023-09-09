@@ -1,0 +1,53 @@
+<div>
+	{{#with main}}
+		<main>
+			<section>
+				{{!-- {{> title data="Summary"}} --}}
+				{{!--          ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑          --}}
+				{{> title data="Work history" big=true}}
+				<div>
+					{{!-- Work in progres... --}}
+				{{!--          ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑          --}}
+					<ul>
+						{{#each works}}
+							<li>
+								<div>{{position}}</div> <br>
+								
+								{{!-- <div>{{duration.from}} - {{duration.to}}</div> --}}
+{{!--          ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   work в історії вказуємо що ще працюємо в цій компанії--}}
+								<div>
+									{{duration.from}} - 
+									{{#if duration.to}} 
+										{{duration.to}} 
+									{{else}} 
+										(досі працюємо) 
+									{{/if}}
+								</div> <br>
+								
+								{{!-- <div><a href="{{company.url}}" target="_blank" >{{company.name}}</a></div> --}}
+								{{!-- {{> link text=company.name href=company.url blank=true isLine=false}} --}}
+								{{> link text=company.name href=company.url blank=true noLine=true}} <br><br>
+
+								<div>
+									<strong>Projects ({{projectAmount}})</strong>
+								</div> <br>
+								<ul>
+									{{#each projects}}
+										<li>
+											{{!-- Test... --}}
+{{!--          ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   виводимо з works/projects - name=Resume--}}
+											{{!-- <div>{{name}}</div> --}}
+{{!--          ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   перетворюэмо слово в посилання--}}
+											<div>{{> link text=name href=url blank=true noLine=true}}</div>
+										</li>
+									{{/each}}
+								</ul>
+							</li> <br>
+							
+						{{/each}}
+					</ul>
+				</div>
+			</section>
+		</main>
+	{{/with}}
+</div>

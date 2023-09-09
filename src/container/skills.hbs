@@ -2,6 +2,8 @@
 	{{#with main}}
 	<main>
 		<section>
+			{{!-- {{> title data="All skills"}} --}}
+				{{!--          ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑          --}}
 			{{> title data="All skills" big=true}}
 			<ul>
 			{{#each skills}}
@@ -18,6 +20,8 @@
 			</ul>
 		</section>
 		<section>
+			{{!-- {{> title data="My hobbies"}} --}}
+				{{!--          ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑          --}}
 			{{> title data="My hobbies" big=false}}
 			<ol>
 			{{#each hobbies}}

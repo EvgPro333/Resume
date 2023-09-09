@@ -27,7 +27,7 @@ var footer = {
     },
   },
 }
-// ================================================================ my var
+// ================================================================ index
 
 router.get('/', function (req, res) {
   res.render('index', {})
@@ -36,7 +36,7 @@ router.get('/', function (req, res) {
 router.get('/summary', function (req, res) {
   res.render('summary', {
     page: {
-      title: 'resume | summary',
+      title: 'resume | Summary',
     },
     // !                          end page   ----------------------
     header,
@@ -64,20 +64,12 @@ router.get('/summary', function (req, res) {
 router.get('/skills', function (req, res) {
   res.render('skills', {
     page: {
-      title: 'resume | skills',
+      title: 'resume | Skills',
     },
     // !                          end page   ----------------------
     header,
     // !                          end header   ----------------------
     main: {
-      // skills: [
-      //   'HTML',
-      //   'HaldleBars',
-      //   'VS Code',
-      //   'Git',
-      //   'Terminal',
-      //   'NPM',
-      // ],
       skills: [
         {
           name: 'HTML',
@@ -146,19 +138,13 @@ router.get('/skills', function (req, res) {
 router.get('/education', function (req, res) {
   res.render('education', {
     page: {
-      title: 'resume | education',
+      title: 'resume | Education',
     },
     // !                          end page   ----------------------
     header,
     // !                          end header   ----------------------
     main: {
       educations: [
-        // 'Дитсадок',
-        // 'Середня школа',
-        // 'Університет',
-        // 'Гімназія ім.Н.Д.Діор',
-        // 'Автошкола',
-        //↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑
         {
           name: 'Дитсадок',
           isEnd: true,
@@ -192,6 +178,64 @@ router.get('/education', function (req, res) {
         {
           name: 'Текст Третього рядка',
           id: 321,
+        },
+      ],
+    },
+    // !                          end main   ----------------------
+    footer,
+    // !                          end footer   ----------------------
+  })
+})
+// ================================================================ work
+router.get('/work', function (req, res) {
+  res.render('work', {
+    layout: 'big',
+    page: {
+      title: 'resume | Work',
+    },
+    // !                          end page   ----------------------
+    header,
+    // !                          end header   ----------------------
+    main: {
+      works: [
+        {
+          position: 'Junior Fullstack Developer',
+          company: {
+            name: 'IT Brains',
+            url: 'http://it-brains.com.ua/',
+          },
+          duration: {
+            from: '10.10.2022',
+            // to: '22.03.2023',
+            to: null,
+          },
+          projectAmount: 3,
+          projects: [
+            {
+              name: 'Resume',
+              url: 'http://resume.com.ua/',
+              about: 'bla bla bla',
+              stacks: [
+                {
+                  name: 'React.js',
+                },
+                {
+                  name: 'HTML / CSS',
+                },
+                {
+                  name: 'Nodejs',
+                },
+              ],
+              awards: [
+                {
+                  name: '1111geuygvegvewgvywrvljhvfhljgerivygfth',
+                },
+                {
+                  name: 'l22222geuygvegvewgvywrvljhvfhljgerivygfth',
+                },
+              ],
+            },
+          ],
         },
       ],
     },

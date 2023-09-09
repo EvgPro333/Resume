@@ -2,6 +2,8 @@
 	{{#with main}}
 		<main>
 			<section>
+				{{!-- {{> title data="My education"}} --}}
+				{{!--          ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑          --}}
 				{{> title data="My education" big=true}}
 				<ul>
 					{{#each educations}}
@@ -17,6 +19,8 @@
 				</ul>
 			</section>
 			<section>
+				{{!-- {{> title data="My certificates"}} --}}
+				{{!--          ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑          --}}
 				{{> title data="My certificates" big=false}}
 				<ul>
 					{{#each certificates}}

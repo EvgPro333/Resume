@@ -7,26 +7,6 @@
   </head>
   <body>
 {{!--! ---------------------------------------------------------------------- --}}
-		{{#with header}}
-			<header>
-				<div>
-					<h1>{{name.firstname}} {{name.lastname}}</h1>
-				</div>
-				<div>
-					<b>{{position}}</b>
-				</div>   <br>
-				<div>
-					<em>{{salary}}</em>
-				</div>  <br>
-				<div>
-					<address>
-						{{address}}
-					</address>
-				</div>  <br>
-				<br>   <hr>
-			</header>
-		{{/with}}
-{{!--! ---------------------------------------------------------------------- --}}
 			{{!-- <nav>
 				{{> link text="Summary" href="/summary" line=true }}
 				{{> link text="Skills" href="/skills" line=true }}
@@ -35,13 +15,19 @@
 			</nav> --}}
 {{!--          ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑          --}}
 				{{> nav}}
+			<br>
+			<hr>
 {{!--! ---------------------------------------------------------------------- --}}
     {{{body}}}
+
+			<br>
+			<hr>
+
 {{!--! ---------------------------------------------------------------------- --}}
 		{{#with footer}}
 			<footer>
-				<hr>
-				<br>
+				{{!-- <hr>
+				<br> --}}
 				<div>
 					{{#with social}}
 						{{> link text=email.text href=email.href blank=true }}
