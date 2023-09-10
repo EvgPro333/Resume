@@ -215,7 +215,7 @@ router.get('/work', function (req, res) {
           projects: [
             {
               name: 'Resume',
-              url: '',
+              url: '#',
               about: 'bla bla bla',
               stacks: [
                 {

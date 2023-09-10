@@ -1,13 +1,11 @@
 		{{#with footer}}
 			<footer>
-				<hr>
 				<br>
+				<hr>
 				<div>
 					{{#with social}}
 						{{> link text=email.text href=email.href blank=true }}
 						{{> link text=phone.text href=phone.href blank=true }}
-						{{!-- {{> link text=LinkedIn.text href=LinkedIn.href blank=true}} --}}
-{{!--          ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         прибираємо слеш з останнього посилання соцмереж--}}
 						{{> link text=LinkedIn.text href=LinkedIn.href blank=true  noLine=true}}
 					{{/with}}
 				</div>
@@ -18,6 +16,7 @@
 				<div>
 					<address>
 						{{../header/address}}
+						{{!-- {{address}} --}}
 					</address>
 				</div>
 			</footer>

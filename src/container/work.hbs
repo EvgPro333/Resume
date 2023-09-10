@@ -16,8 +16,6 @@
 										(досі працюємо) 
 									{{/if}}
 								</div> <br>
-								{{!-- {{> link text=company.name href=company.url blank=true noLine=true}} <br><br> --}}
-{{!--          ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         якщо url=null буде просто назва--}}
 								{{#if company.url}}
 									{{> link text=company.name href=company.url blank=true noLine=true}} 
 								{{else}} 
@@ -34,20 +32,23 @@
 											<div>
 												<em>Project stacks ({{stackAmount}})</em>
 											</div> <br>
+											<div>
 												<ul>
 													{{#each stacks}}
 														<li>{{name}}</li>
 													{{/each}}
-												</ul><br>
-												<div>
-													<em>Project awards ({{awardAmount}})</em>
-												</div> <br>
+												</ul>
+											</div><br>
+											<div>
+												<em>Project awards ({{awardAmount}})</em>
+											</div> <br>
+											<div>
 												<ul>
 													{{#each awards}}
 														<li>{{name}}</li>
 													{{/each}}
 												</ul>
-											
+											</div>
 										</li>
 									{{/each}}
 								</ul>
