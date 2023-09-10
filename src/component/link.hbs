@@ -1,16 +1,4 @@
-{{!-- {{#with data}}
-	<a href="{{href}}">{{text}}</a> /
-{{/with}} --}}
-  {{!--          ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑          --}}
-{{!-- <a href="{{href}}" {{#if blank}} target="_blank"{{/if}}>{{text}}</a> / --}}
-  {{!--          ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑          --}}
 <a href="{{href}}" {{#if blank}} target="_blank"{{/if}}>{{text}}</a> 
-  {{!-- {{#if line}}
-		---
-	{{else}}
-		/
-  {{/if}} --}}
-{{!--          ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   позбавилися слеша там де noLine=true (біля itbrains(work history))--}}
 	{{#unless noLine}}
 		{{#if line}}
 			---

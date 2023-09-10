@@ -203,6 +203,8 @@ router.get('/work', function (req, res) {
           company: {
             name: 'IT Brains',
             url: 'http://it-brains.com.ua/',
+            // url: '',
+            // url: null,
           },
           duration: {
             from: '10.10.2022',
@@ -213,7 +215,7 @@ router.get('/work', function (req, res) {
           projects: [
             {
               name: 'Resume',
-              url: 'http://resume.com.ua/',
+              url: '',
               about: 'bla bla bla',
               stacks: [
                 {
@@ -234,6 +236,8 @@ router.get('/work', function (req, res) {
                   name: 'l22222geuygvegvewgvywrvljhvfhljgerivygfth',
                 },
               ],
+              stackAmount: 5,
+              awardAmount: 1,
             },
           ],
         },

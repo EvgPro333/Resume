@@ -2,19 +2,12 @@
 	{{#with main}}
 		<main>
 			<section>
-				{{!-- {{> title data="Summary"}} --}}
-				{{!--          ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑          --}}
 				{{> title data="Work history" big=true}}
 				<div>
-					{{!-- Work in progres... --}}
-				{{!--          ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑          --}}
 					<ul>
 						{{#each works}}
 							<li>
 								<div>{{position}}</div> <br>
-								
-								{{!-- <div>{{duration.from}} - {{duration.to}}</div> --}}
-{{!--          ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   work в історії вказуємо що ще працюємо в цій компанії--}}
 								<div>
 									{{duration.from}} - 
 									{{#if duration.to}} 
@@ -23,22 +16,38 @@
 										(досі працюємо) 
 									{{/if}}
 								</div> <br>
-								
-								{{!-- <div><a href="{{company.url}}" target="_blank" >{{company.name}}</a></div> --}}
-								{{!-- {{> link text=company.name href=company.url blank=true isLine=false}} --}}
-								{{> link text=company.name href=company.url blank=true noLine=true}} <br><br>
-
+								{{!-- {{> link text=company.name href=company.url blank=true noLine=true}} <br><br> --}}
+{{!--          ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         якщо url=null буде просто назва--}}
+								{{#if company.url}}
+									{{> link text=company.name href=company.url blank=true noLine=true}} 
+								{{else}} 
+									<b>{{company.name}}</b> 
+								{{/if}}<br><br>
 								<div>
 									<strong>Projects ({{projectAmount}})</strong>
 								</div> <br>
 								<ul>
 									{{#each projects}}
 										<li>
-											{{!-- Test... --}}
-{{!--          ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   виводимо з works/projects - name=Resume--}}
-											{{!-- <div>{{name}}</div> --}}
-{{!--          ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   перетворюэмо слово в посилання--}}
-											<div>{{> link text=name href=url blank=true noLine=true}}</div>
+											<div>{{> link text=name href=url blank=true noLine=true}}</div> <br>
+											<div><p>{{about}}</p></div> <br>
+											<div>
+												<em>Project stacks ({{stackAmount}})</em>
+											</div> <br>
+												<ul>
+													{{#each stacks}}
+														<li>{{name}}</li>
+													{{/each}}
+												</ul><br>
+												<div>
+													<em>Project awards ({{awardAmount}})</em>
+												</div> <br>
+												<ul>
+													{{#each awards}}
+														<li>{{name}}</li>
+													{{/each}}
+												</ul>
+											
 										</li>
 									{{/each}}
 								</ul>

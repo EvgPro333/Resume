@@ -7,45 +7,37 @@
   </head>
   <body>
 {{!--! ---------------------------------------------------------------------- --}}
-			{{!-- <nav>
-				{{> link text="Summary" href="/summary" line=true }}
-				{{> link text="Skills" href="/skills" line=true }}
-				{{> link text="Education" href="/education" line=true }}
-				{{> link text="Work" href="/work" line=true }}
-			</nav> --}}
-{{!--          ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑          --}}
 				{{> nav}}
 			<br>
 			<hr>
 {{!--! ---------------------------------------------------------------------- --}}
     {{{body}}}
-
-			<br>
-			<hr>
-
 {{!--! ---------------------------------------------------------------------- --}}
-		{{#with footer}}
+		{{!-- {{#with footer}}
 			<footer>
-				{{!-- <hr>
-				<br> --}}
+				<hr>
+				<br>
 				<div>
 					{{#with social}}
 						{{> link text=email.text href=email.href blank=true }}
 						{{> link text=phone.text href=phone.href blank=true }}
-						{{> link text=LinkedIn.text href=LinkedIn.href blank=true }}
-					{{/with}}
-				</div>
-				<br>
-				<div>
-					<em>Copyright by {{../header/name/firstname}} {{../header/name/lastname}}</em>
-				</div> <br>
-				<div>
-					<address>
-						{{../header/address}}
-					</address>
-				</div>
-			</footer>
-		{{/with}}
+						{{!-- {{> link text=LinkedIn.text href=LinkedIn.href blank=true}} --}}
+{{!--          ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         ↓↑↓   ↑↓↑         прибираємо слеш з останнього посилання соцмереж--}}
+						{{!-- {{> link text=LinkedIn.text href=LinkedIn.href blank=true  noLine=true}} --}}
+					{{!-- {{/with}} --}}
+				{{!-- </div> --}}
+				{{!-- <br> --}}
+				{{!-- <div> --}}
+					{{!-- <em>Copyright by {{../header/name/firstname}} {{../header/name/lastname}}</em> --}}
+				{{!-- </div> <br> --}}
+				{{!-- <div> --}}
+					{{!-- <address> --}}
+						{{!-- {{../header/address}} --}}
+					{{!-- </address> --}}
+				{{!-- </div> --}}
+			{{!-- </footer> --}}
+		{{!-- {{/with}} --}}
+		{{> footer}}
 {{!--! ---------------------------------------------------------------------- --}}
   </body>
 </html>
