@@ -248,5 +248,121 @@ router.get('/work', function (req, res) {
     // !                          end footer   ----------------------
   })
 })
+// ================================================================ person
+
+//              ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/person', function (req, res) {
+  //             ↙ cюди вводимо назву файлу з сontainer
+  res.render('person', {
+    layout: 'person',
+    person: {
+      name: 'Emma Johnson',
+      age: 32,
+      gender: 'Female',
+      address: {
+        street: '123 Main St',
+        city: 'New York',
+        state: 'NY',
+        zip: '10001',
+        country: 'USA',
+      },
+      // освіта
+      education: [
+        {
+          // ступінь
+          degree: 'Bachelor of Science',
+          // більшість
+          major: 'Computer Science',
+          // університет
+          university:
+            'Massachusetts Institute of Technology',
+          // Рік закінчення
+          graduationYear: 2012,
+        },
+      ],
+      // досвід роботи
+      workExperience: [
+        {
+          company: 'Google',
+          title: 'Software Engineer',
+          startDate: '2012-06-01',
+          endDate: '2016-12-31',
+          // забов'язання
+          responsibilities: [
+            'Developed new features for Google Maps',
+            'Worked on improving search algorithms',
+          ],
+          // рік_заснування
+          year_founded: 1990,
+          // індустрія   (галузь промисловості)
+          industry: 'Technology',
+          // працівників
+          employees: [
+            {
+              name: 'John Smith',
+              position: 'CEO',
+              // відділ: виконавчий
+              department: 'Executive',
+              projects: [
+                {
+                  name: 'Project Alpha',
+                  // опис
+                  description:
+                    // Розробка нової програмної платформи
+                    'Developing new software platform',
+                  status: 'In Progress',
+                  // команди
+                  teams: [
+                    {
+                      team_name: 'Awesome Team',
+                      team_leader: {
+                        name: 'John Smith',
+                        title: 'Team Leader',
+                        email: 'john.smith@example.com',
+                      },
+                      team_members: [
+                        {
+                          name: 'Alice Johnson',
+                          title: 'Software Engineer',
+                          email:
+                            'alice.johnson@example.com',
+                          skills: ['Java', 'Python', 'SQL'],
+                          projects: [
+                            {
+                              name: 'Project A',
+                              description:
+                                'Lorem ipsum dolor sit amet',
+                              technologies: [
+                                'Java',
+                                'Spring Framework',
+                              ],
+                              team_members: [
+                                {
+                                  name: 'Bob Lee',
+                                  title:
+                                    'Software Engineer',
+                                },
+                                {
+                                  name: 'Cindy Chen',
+                                  title: 'UI Designer',
+                                },
+                              ],
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+  })
+})
+
+// ================================================================
 
 module.exports = router

@@ -1,0 +1,184 @@
+{{#with person}}
+	<header>
+		<div>
+			<h1>{{name}}</h1>
+		</div>
+
+		<div>
+			<b> {{gender}} {{age}} </b>
+		</div>   
+		<br>
+
+		<div>
+			<address>
+				{{address.street}}<br>
+				{{address.city}}<br>
+				{{address.state}},
+				{{address.zip}}<br>
+				{{address.country}}<br>
+			</address>
+		</div>    
+		<br>   
+		<hr>
+	</header>
+	
+	<main>
+		{{> title data="Work history" big=true}}
+		<div>
+			{{!-- <ul> --}}
+				{{#each education}}
+					{{!-- <li> --}}
+						<div>
+							{{!-- <em>Education ({{stackAmount}})</em> --}}
+							<em>Education</em>
+						</div> <br>
+
+						<div>
+							<ul>
+								<li>
+									{{degree}} <br>
+									{{major}} <br>
+									{{university}} <br>
+									{{graduationYear}} <br>
+								</li>
+								<br>
+							</ul>
+						</div> 
+						
+						<br>
+					{{!-- </li> <br> --}}
+				{{/each}}
+			{{!-- </ul> --}}
+		</div>
+
+		<div>
+			{{!-- <ul> --}}
+				{{#each workExperience}}
+					{{!-- <li> --}}
+						<div>
+							{{!-- <em>workExperience ({{stackAmount}})</em> --}}
+							<em>workExperience</em>
+						</div> 
+						<br>
+						<div>
+							<ul>
+								<li>
+									{{company}} 
+									<br>
+									{{title}} 
+									<br>
+									{{startDate}} / {{endDate}}
+									<br> 
+									<br>
+									<div>
+										<em>responsibilities</em>
+									</div> 
+									<br>
+									<ul>
+										{{#each responsibilities}}
+											<li>{{this}}</li>
+										{{/each}} 
+										<br>
+									</ul>
+								</li>
+								<br>
+							</ul>
+						</div> 
+						<br>
+						<div>
+							<div>
+								{{year_founded}}
+								<em>{{industry}}</em>
+							</div> 
+							<br>
+							<ul>
+								{{#each employees}}
+								<li>
+									{{name}} 
+									<br>
+									<abbr title="SEO-специалист">{{position}}</abbr> <br>
+									{{department}}
+									<br> 
+									<br>
+									<div>
+										<em>projects</em>
+									</div> <br>
+									<ul>
+										{{#each projects}}
+											<li>
+												{{name}}  ({{status}})<br>
+												{{description}}
+											</li>
+											<br>
+											{{!-- <br> --}}
+											<div>
+												<em>teams :</em>
+											</div> <br>
+											{{#each teams}}
+												<ul>
+													<li>
+														{{team_name}}<br>
+														{{team_leader.name}}<br>
+														{{team_leader.title}}<br>
+														{{team_leader.email}}
+													</li>
+												</ul><br>
+												<ul>
+													{{#each team_members}}
+														<li>
+															{{name}}<br>
+															{{title}}<br>
+															{{email}}<br>
+															<ul>
+																{{#each skills}}
+																	<li>
+																		{{this}} <br>
+																	</li>
+																{{/each }}
+															</ul>
+															<br>
+
+															<ul>
+																{{#each projects}}
+																	<li>
+																		{{name}} <br>
+																		{{description}} <br>
+																	</li>
+
+																	<ul>
+																		{{#each technologies}}
+																			<li>
+																				{{this}} <br>
+																			</li>
+																		{{/each }}
+																	</ul>
+
+																	<ul>
+																		{{#each team_members}}
+																			<li>
+																				{{name}} <br>
+																				{{title}} <br>
+																			</li>
+																		{{/each }}
+																	</ul>
+																{{/each }}
+															</ul>
+															
+														</li>
+													{{/each}} <br>
+												</ul>
+											{{/each}} <br>
+										{{/each}} <br>
+									</ul>
+								</li>
+								<br>
+								{{/each}}
+							</ul>
+						</div> 
+					{{!-- </li> <br> --}}
+				{{/each}}
+			{{!-- </ul> --}}
+		</div>
+	</main>
+{{/with}}
+	
