@@ -363,6 +363,117 @@ router.get('/person', function (req, res) {
   })
 })
 
+// ================================================================ bio
+
+//              ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/bio', function (req, res) {
+  //             ↙ cюди вводимо назву файлу з сontainer
+  res.render('bio', {
+    layout: 'bio',
+    name: 'Albert Einstein',
+    birthdate: 'March 14, 1879',
+    birthplace:
+      'Ulm, Kingdom of Württemberg, German Empire',
+    deathdate: 'April 18, 1955',
+    deathplace: 'Princeton, New Jersey, United States',
+    nationality: 'Swiss, German, American',
+    occupation: 'Theoretical Physicist',
+    known_for: [
+      'Theory of Relativity',
+      'E=mc²',
+      'Photoelectric Effect',
+      'Brownian Motion',
+    ],
+    // освіта
+    education: [
+      {
+        degree: 'Doctor of Philosophy',
+        field: 'Physics',
+        institution: 'University of Zurich',
+        year: 1905,
+      },
+    ],
+    // відомі_публікації
+    notable_publications: [
+      {
+        title: 'On the Electrodynamics of Moving Bodies',
+        year: 1905,
+        publisher: 'Annalen der Physik',
+      },
+      {
+        title:
+          'Does the Inertia of a Body Depend Upon Its Energy Content?',
+        year: 1905,
+        publisher: 'Annalen der Physik',
+      },
+    ],
+    // партнери
+    partners: [
+      {
+        name: 'Mileva Marić',
+        // відносини
+        relationship: 'First wife',
+        years: '1903-1919',
+      },
+      {
+        name: 'Elsa Einstein',
+        // відносини
+        relationship:
+          "Second wife, also Einstein's first cousin",
+        years: '1919-1936',
+      },
+    ],
+    // нагороди
+    awards: [
+      {
+        title: 'Nobel Prize in Physics',
+        year: 1921,
+        description:
+          'Awarded for his explanation of the photoelectric effect',
+      },
+    ],
+    // вплив
+    influences: [
+      'Isaac Newton',
+      'James Clerk Maxwell',
+      'Hermann Minkowski',
+    ],
+    // впливав
+    influenced: [
+      'Niels Bohr',
+      'Erwin Schrödinger',
+      'Werner Heisenberg',
+      'Richard Feynman',
+    ],
+    // котирування (блок цитат)
+    quotes: [
+      'Imagination is more important than knowledge.',
+      'I have no special talent. I am only passionately curious.',
+      'The important thing is not to stop questioning.',
+      'The most beautiful thing we can experience is the mysterious. It is the source of all true art and all science.',
+    ],
+    // великі_відкриття
+    major_discoveries: [
+      {
+        title: 'Photoelectric Effect',
+        year: 1905,
+        description:
+          'Einstein explained the photoelectric effect, where electrons are emitted from a metal surface when it is illuminated by light.',
+      },
+    ],
+    // внески
+    contributions: {
+      title: 'Inventions',
+      description:
+        'Leonardo designed and invented a wide variety of machines and devices, including a helicopter, a diving suit, and a self-propelled cart. Many of his inventions were centuries ahead of their time.',
+      year: 'Late 15th to early 16th century',
+      field: 'Invention',
+    },
+    // вивів
+    //-------------------------------------------------------------
+    // не вивів
+  })
+})
 // ================================================================
 
 module.exports = router

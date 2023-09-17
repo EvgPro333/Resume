@@ -5,17 +5,16 @@
 		</div>
 
 		<div>
-			<b> {{gender}} {{age}} </b>
+			<p><b> {{gender}} {{age}} </b></p>
 		</div>   
 		<br>
 
 		<div>
 			<address>
-				{{address.street}}<br>
-				{{address.city}}<br>
-				{{address.state}},
-				{{address.zip}}<br>
-				{{address.country}}<br>
+				<p>{{address.street}}</p><br>
+				<p>{{address.city}}</p><br>
+				<p>{{address.state}}, {{address.zip}}</p><br>
+				<p>{{address.country}}</p><br>
 			</address>
 		</div>    
 		<br>   
@@ -30,7 +29,7 @@
 					{{!-- <li> --}}
 						<div>
 							{{!-- <em>Education ({{stackAmount}})</em> --}}
-							<em>Education</em>
+							<p><em>Education</em></p>
 						</div> <br>
 
 						<div>
@@ -57,7 +56,7 @@
 					{{!-- <li> --}}
 						<div>
 							{{!-- <em>workExperience ({{stackAmount}})</em> --}}
-							<em>workExperience</em>
+							<p><em>workExperience</em></p>
 						</div> 
 						<br>
 						<div>
@@ -71,7 +70,7 @@
 									<br> 
 									<br>
 									<div>
-										<em>responsibilities</em>
+										<p><em>responsibilities</em></p>
 									</div> 
 									<br>
 									<ul>
@@ -88,7 +87,7 @@
 						<div>
 							<div>
 								{{year_founded}}
-								<em>{{industry}}</em>
+								<p><em>{{industry}}</em></p>
 							</div> 
 							<br>
 							<ul>
@@ -101,7 +100,7 @@
 									<br> 
 									<br>
 									<div>
-										<em>projects</em>
+										<p><em>projects</em></p>
 									</div> <br>
 									<ul>
 										{{#each projects}}
@@ -112,7 +111,7 @@
 											<br>
 											{{!-- <br> --}}
 											<div>
-												<em>teams :</em>
+												<p><em>teams :</em></p>
 											</div> <br>
 											{{#each teams}}
 												<ul>
