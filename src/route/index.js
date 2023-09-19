@@ -76,39 +76,32 @@ router.get('/skills', function (req, res) {
           point: 8,
           isTop: true,
         },
-
         {
           name: 'HaldleBars',
           point: 6,
           isTop: false,
         },
-
         {
           name: 'VS Code',
           point: 9,
         },
-
         {
           name: 'Git',
           point: 10,
           isTop: true,
         },
-
         {
           name: 'Terminal',
           point: 9,
         },
-
         {
           name: 'NPM',
           point: 8,
         },
-
         {
           name: 'React.js',
           point: 0,
         },
-
         {
           name: 'PHP',
           point: null,
@@ -250,9 +243,7 @@ router.get('/work', function (req, res) {
 })
 // ================================================================ person
 
-//              ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/person', function (req, res) {
-  //             ↙ cюди вводимо назву файлу з сontainer
   res.render('person', {
     layout: 'person',
     person: {
@@ -266,52 +257,38 @@ router.get('/person', function (req, res) {
         zip: '10001',
         country: 'USA',
       },
-      // освіта
       education: [
         {
-          // ступінь
           degree: 'Bachelor of Science',
-          // більшість
           major: 'Computer Science',
-          // університет
           university:
             'Massachusetts Institute of Technology',
-          // Рік закінчення
           graduationYear: 2012,
         },
       ],
-      // досвід роботи
       workExperience: [
         {
           company: 'Google',
           title: 'Software Engineer',
           startDate: '2012-06-01',
           endDate: '2016-12-31',
-          // забов'язання
           responsibilities: [
             'Developed new features for Google Maps',
             'Worked on improving search algorithms',
           ],
-          // рік_заснування
           year_founded: 1990,
-          // індустрія   (галузь промисловості)
           industry: 'Technology',
-          // працівників
           employees: [
             {
               name: 'John Smith',
               position: 'CEO',
-              // відділ: виконавчий
               department: 'Executive',
               projects: [
                 {
                   name: 'Project Alpha',
-                  // опис
                   description:
-                    // Розробка нової програмної платформи
                     'Developing new software platform',
                   status: 'In Progress',
-                  // команди
                   teams: [
                     {
                       team_name: 'Awesome Team',
@@ -364,10 +341,7 @@ router.get('/person', function (req, res) {
 })
 
 // ================================================================ bio
-
-//              ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/bio', function (req, res) {
-  //             ↙ cюди вводимо назву файлу з сontainer
   res.render('bio', {
     layout: 'bio',
     name: 'Albert Einstein',
@@ -384,7 +358,6 @@ router.get('/bio', function (req, res) {
       'Photoelectric Effect',
       'Brownian Motion',
     ],
-    // освіта
     education: [
       {
         degree: 'Doctor of Philosophy',
@@ -393,7 +366,6 @@ router.get('/bio', function (req, res) {
         year: 1905,
       },
     ],
-    // відомі_публікації
     notable_publications: [
       {
         title: 'On the Electrodynamics of Moving Bodies',
@@ -407,23 +379,19 @@ router.get('/bio', function (req, res) {
         publisher: 'Annalen der Physik',
       },
     ],
-    // партнери
     partners: [
       {
         name: 'Mileva Marić',
-        // відносини
         relationship: 'First wife',
         years: '1903-1919',
       },
       {
         name: 'Elsa Einstein',
-        // відносини
         relationship:
           "Second wife, also Einstein's first cousin",
         years: '1919-1936',
       },
     ],
-    // нагороди
     awards: [
       {
         title: 'Nobel Prize in Physics',
@@ -432,27 +400,23 @@ router.get('/bio', function (req, res) {
           'Awarded for his explanation of the photoelectric effect',
       },
     ],
-    // вплив
     influences: [
       'Isaac Newton',
       'James Clerk Maxwell',
       'Hermann Minkowski',
     ],
-    // впливав
     influenced: [
       'Niels Bohr',
       'Erwin Schrödinger',
       'Werner Heisenberg',
       'Richard Feynman',
     ],
-    // котирування (блок цитат)
     quotes: [
       'Imagination is more important than knowledge.',
       'I have no special talent. I am only passionately curious.',
       'The important thing is not to stop questioning.',
       'The most beautiful thing we can experience is the mysterious. It is the source of all true art and all science.',
     ],
-    // великі_відкриття
     major_discoveries: [
       {
         title: 'Photoelectric Effect',
@@ -461,7 +425,6 @@ router.get('/bio', function (req, res) {
           'Einstein explained the photoelectric effect, where electrons are emitted from a metal surface when it is illuminated by light.',
       },
     ],
-    // внески
     contributions: {
       title: 'Inventions',
       description:
@@ -469,11 +432,97 @@ router.get('/bio', function (req, res) {
       year: 'Late 15th to early 16th century',
       field: 'Invention',
     },
-    // вивів
-    //-------------------------------------------------------------
-    // не вивів
   })
 })
+
+// ================================================================ program
+
+router.get('/program', function (req, res) {
+  res.render('program', {
+    layout: 'program',
+    program: {
+      excursion: {
+        name: 'Cultural Tour',
+        location: {
+          city: 'Paris',
+          country: 'France',
+        },
+        date: '2023-06-15',
+        program: [
+          {
+            name: 'Museum Visit',
+            type: 'Art',
+            duration: 3,
+            details: {
+              museum: {
+                name: 'The Louvre',
+                location: {
+                  address: 'Rue de Rivoli',
+                  city: 'Paris',
+                  country: 'France',
+                },
+                exhibits: [
+                  {
+                    name: 'Mona Lisa',
+                    artist: 'Leonardo da Vinci',
+                    description: 'Iconic portrait painting',
+                    audio_guide: true,
+                  },
+                  {
+                    name: 'Winged Victory of Samothrace',
+                    artist: null,
+                    description:
+                      'Ancient Greek statue of Nike, the goddess of victory',
+                    audio_guide: true,
+                  },
+                ],
+              },
+              guide: {
+                name: 'Francois',
+                language: 'French',
+                rating: 4.8,
+              },
+            },
+          },
+          {
+            name: 'Cultural Show',
+            type: 'Music and Dance',
+            duration: 2,
+            details: {
+              venue: {
+                name: 'Moulin Rouge',
+                location: {
+                  address: '82 Boulevard de Clichy',
+                  city: 'Paris',
+                  country: 'France',
+                },
+              },
+              performers: [
+                {
+                  name: 'Mireille Mathieu',
+                  type: 'Chanson singer',
+                },
+                {
+                  name: "Ballet de l'Opéra National de Paris",
+                  type: 'Classical ballet company',
+                },
+              ],
+              guide: {
+                name: 'Sophie',
+                language: 'English',
+                rating: 4.6,
+              },
+            },
+          },
+        ],
+      },
+    },
+  })
+})
+// вивів
+//-------------------------------------------------------------
+// не вивів
+
 // ================================================================
 
 module.exports = router
