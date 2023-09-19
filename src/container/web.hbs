@@ -1,0 +1,62 @@
+<h1>web - languages</h1>
+{{#with web}}
+	{{#each languages}}
+		<p> <strong> {{name}} </strong> <small> : v. {{version}} </small> </p>
+		<p> <i> {{description}} </i>  </p>
+{{!-- ===================================================== web languages name version description --}}
+
+				{{#each elements}}
+					<p> 
+						<b> elements : </b> 
+						<em> {{name}} </em>  - 
+						<small> {{description}} </small>  
+						<br> <sub> attributes : </sub>
+					</p>
+					<div> 
+						{{#each attributes}}
+							{{name}} - ({{description}})
+							<br>
+						{{/each}}
+							<br>
+					</div>
+				{{/each}}
+{{!-- ===================================================== HTML --}}
+
+				{{#each properties}}
+					<p> 
+						<b> properties : </b> 
+						<em> {{name}} </em>  - 
+						<small> {{description}} </small>  
+						<br> <sub> values : </sub>
+					</p>
+					<div> 
+						{{#each values}}
+							{{value}} - ({{description}})
+							<br>
+						{{/each}}
+							<br>
+					</div>
+				{{/each}}
+{{!-- ===================================================== CSS --}}
+
+				{{#each functions}}
+					<p> 
+						<b> functions : </b> 
+						<em> {{name}} </em>  - 
+						<small> {{description}} </small>  
+						<br> <sub> parameters : </sub>
+					</p>
+					<div> 
+						{{#each parameters}}
+							{{name}} {{type}} - ({{description}})
+							<br>
+						{{/each}}
+							<br>
+					</div>
+				{{/each}}
+{{!-- ===================================================== JavaScript --}}
+
+		<br> 
+		<hr>
+	{{/each}}
+{{/with}}
