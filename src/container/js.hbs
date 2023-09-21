@@ -1,0 +1,104 @@
+<header>
+	<h1> {{name}} </h1>
+	<p> {{description}} </p>
+	<p> founder - <em> {{history.founder}} </em> {{history.year}}</p>
+</header>
+<hr>
+<main>
+		{{!-- -------------------------------- types--}}
+	{{> title data="types" big=true}}
+	<ul>
+		{{#each types}}
+			<li> {{this}} </li>
+		{{/each}}
+	</ul>
+
+		{{!-- -------------------------------- syntax--}}
+	{{> title data="syntax :" big=true}}
+	{{#with syntax}}
+		{{!-- -------------------------------- variables--}}
+		<ul>
+			{{> title data="variables" big=false}}
+			{{#each variables}}
+				<li> {{this}} </li>
+			{{/each}}
+		</ul>
+		{{!-- -------------------------------- functions--}}
+		<ul>
+			{{> title data="functions" big=false}}
+			{{#each functions}}
+				<li> {{this}} </li>
+			{{/each}}
+		</ul>
+		{{!-- -------------------------------- conditionals--}}
+		<ul>
+			{{> title data="conditionals" big=false}}
+			{{#each conditionals}}
+				<li> {{this}} </li>
+			{{/each}}
+		</ul>
+		{{!-- -------------------------------- loops--}}
+		<ul>
+			{{> title data="loops" big=false}}
+			{{#each loops}}
+				<li> {{this}} </li>
+			{{/each}}
+		</ul>
+		{{!-- -------------------------------- classes--}}
+		<ul>
+			{{> title data="classes" big=false}}
+			{{#each classes}}
+				<li> {{this}} </li>
+			{{/each}}
+		</ul>
+		{{!-- -------------------------------- --}}
+	{{/with}}
+
+	{{!-- -------------------------------- features--}}
+	{{> title data="features" big=true}}
+	<ul>
+		{{#each features}}
+			<li> {{this}} </li>
+		{{/each}}
+	</ul>
+
+	{{!-- -------------------------------- libraries--}}
+	{{> title data="libraries" big=true}}
+	<ul>
+		{{#each libraries}}
+			<li> {{this}} </li>
+		{{/each}}
+	</ul>
+
+	{{!-- -------------------------------- tools--}}
+	{{> title data="tools" big=true}}
+	<ul>
+		{{#each tools}}
+			<li> {{this}} </li>
+		{{/each}}
+	</ul>
+
+	{{!-- -------------------------------- community--}}
+	{{> title data="community" big=true}}
+	<ul>
+		{{#each community}}
+			<li> {{name}} - {{type}} </li>
+		{{/each}}
+	</ul>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
