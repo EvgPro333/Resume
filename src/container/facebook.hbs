@@ -1,0 +1,152 @@
+<header>
+	<h1> {{name}} </h1>
+</header>
+{{!-- ======================================= header --}}
+
+<main>
+	{{!-- start-----------------------------------------user --}}
+	<ul>
+		{{#each users}}
+		<li>
+			<div>
+					<h2>{{name}} </h2>
+					<p> {{gender}} <sup> {{age}} </sup> 
+					<small> id : {{id}} </small>  </p>
+					<br>   
+			</div>
+		</li>
+			
+		{{!-- start-----------------------------------------friends --}}
+		<ul>
+			<h3> friends : </h3>
+			<br>   
+			<li>
+				{{#each friends}}
+					<div>
+							<h4>{{name}} </h4>
+							<p> {{gender}} <sup> {{age}} </sup> 
+							<small> id : {{id}} </small>  </p>
+							<br>   
+					</div>
+					<br>  
+					{{!-- start -----------------------------------------mutual_friends --}}
+					<ul>
+						<h4> mutual_friends : </h4>
+						<br>   
+						<li>
+							{{#each mutual_friends}}
+							<div>
+								<h5>{{name}} </h5>
+								<p> {{gender}} <sup> {{age}} </sup> 
+								<small> id : {{id}} </small>  </p>
+								<br>   
+							</div>
+							<br>  
+							{{/each}}
+						</li>
+					</ul>
+					{{!-- finish -----------------------------------------mutual_friends --}}
+
+					{{!-- start -----------------------------------------groups (friends) --}}
+					<ul>
+						<h4> friends groups : </h4>
+						<br>   
+						<li>
+							{{#each groups}}
+							<div>
+								<h5>{{name}} <sup> id : {{id}}</sup>  </h5>
+								<p> {{description}} </p>
+								{{!-- start -----------------------------------------members --}}
+								<ul>
+									<h4> members : </h4>
+									<br>   
+									<li>
+										{{#each members}}
+										<div>
+											<h5>{{name}} </h5>
+											<p> {{gender}} <sup> {{age}} </sup> 
+											<small> id : {{id}} </small>  </p>
+											<br>   
+										</div>
+										<br>  
+										{{/each}}
+									</li>
+								</ul>
+								{{!-- finish -----------------------------------------members --}}
+								<br>   
+							</div>
+							<br>  
+							{{/each}}
+						</li>
+					</ul>
+					{{!-- finish -----------------------------------------groups (friends) --}}
+				{{/each}}
+			</li>
+		</ul>
+		{{!-- finish-----------------------------------------friends --}}
+
+		{{!-- start ---------------------------------------groups (users) --}}
+		<ul>
+			<h4> groups : </h4>
+			<br>   
+			<li>
+				{{#each groups}}
+				<div>
+					<h5>{{name}} <sup> id : {{id}}</sup>  </h5>
+					<p> {{description}} </p>
+					{{!-- start -----------------------------------------members --}}
+					<ul>
+						<h4> members : </h4>
+						<br>   
+						<li>
+							{{#each members}}
+							<div>
+								<h5>{{name}} </h5>
+								<p> {{gender}} <sup> {{age}} </sup> 
+								<small> id : {{id}} </small>  </p>
+								<br>   
+							</div>
+							<br>  
+							{{/each}}
+						</li>
+					</ul>
+					{{!-- finish -----------------------------------------members --}}
+					<br>   
+				</div>
+				<br>  
+				{{/each}}
+			</li>
+		</ul>
+		{{!-- finish -----------------------------------------groups (users) --}}
+		<br>   
+		<br>   
+	{{/each}}
+	</ul>
+	{{!-- finish -----------------------------------------user --}}
+</main>
+{{!-- ======================================= main --}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
