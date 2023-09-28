@@ -661,7 +661,6 @@ router.get('/web', function (req, res) {
 
 router.get('/js', function (req, res) {
   // res.render генерує нам HTML сторінку
-
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('js', {
     layout: 'basic',
@@ -739,9 +738,122 @@ router.get('/js', function (req, res) {
   //                  ↑↑ сюди вводимо JSON дані
 })
 
+// ================================================================ car
+
+// router.get Створює нам один ентпоїнт
+router.get('/car', function (req, res) {
+  // res.render генерує нам HTML сторінку
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('car', {
+    layout: 'basic',
+    make: 'Toyota',
+    model: 'Camry',
+    year: 2022,
+    color: 'silver',
+    // функции:
+    features: {
+      interior: {
+        // сиденья
+        seats: {
+          // кожа
+          material: 'leather',
+          color: 'black',
+          // с подогревом
+          heated: true,
+          ventilated: true,
+        },
+        // панель приборов
+        dashboard: {
+          material: 'plastic',
+          color: 'black',
+          display: {
+            type: 'LCD',
+            size: 10.1,
+            resolution: '1280x720',
+            touchscreen: true,
+          },
+        },
+        audio: {
+          system: 'JBL',
+          speakers: 8,
+          subwoofer: true,
+          bluetooth: true,
+          USB: true,
+        },
+      },
+      exterior: {
+        // колеса
+        wheels: {
+          size: 18,
+          type: 'alloy',
+          color: 'silver',
+        },
+        headlights: {
+          type: 'LED',
+          brightness: 'high',
+          automatic: true,
+        },
+        sunroof: {
+          type: 'panoramic',
+          size: 'large',
+          automatic: true,
+        },
+      },
+      // безопасность
+      safety: {
+        // подушки безопасности
+        airbags: {
+          front: 2,
+          side: 2,
+          // колено
+          knee: 2,
+          // задний
+          rear: 2,
+        },
+        assistance: {
+          blind_spot_monitoring: true,
+          rear_cross_traffic_alert: true,
+          lane_departure_warning: true,
+          adaptive_cruise_control: true,
+          collision_warning: true,
+        },
+      },
+    },
+    // двигатель
+    engine: {
+      type: 'gasoline',
+      displacement: 2.5,
+      horsepower: 206,
+      torque: 186,
+      transmission: {
+        type: 'automatic',
+        gears: 8,
+      },
+    },
+    // экономия топлива
+    fuel_economy: {
+      city: 28,
+      highway: 39,
+      combined: 32,
+    },
+    // вивів
+    //-------------------------------------------------------------
+    // не вивів
+    // цена
+    price: {
+      base: 25900,
+      destination: 995,
+      options: {
+        navigation: 1200,
+        moonroof: 800,
+        premium_paint: 595,
+      },
+      total: 28990,
+    },
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
 // ================================================================
 
 module.exports = router
-// вивів
-//-------------------------------------------------------------
-// не вивів
