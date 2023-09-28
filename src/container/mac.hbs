@@ -1,0 +1,121 @@
+<head>
+	<h1> {{name}} </h1>
+	<div>
+		<p> 
+			<strong> {{description}} </strong>
+			<br> 
+			<b> {{price}} </b>
+			<br> 
+			<em> {{category}} </em>
+		</p>
+	</div>
+</head>
+{{!-- ============================================HEAD --}}
+<hr>
+<main>
+	{{#with features}}
+		{{!-- -------------------------------- processor--}}
+		{{> title data="processor :" big=true}}
+		<ul>
+			{{#each processor}}
+				<li> {{this}} </li>
+			{{/each}}
+		</ul>
+		<br>
+	
+		{{!-- -------------------------------- memory--}}
+		{{> title data="memory :" big=true}}
+		<ul>
+			{{#each memory}}
+				<li> {{this}} </li>
+			{{/each}}
+		</ul>
+		<br>
+	
+		{{!-- -------------------------------- storage--}}
+		{{> title data="storage :" big=true}}
+		<ul>
+			{{#each storage}}
+				<li> {{this}} </li>
+			{{/each}}
+		</ul>
+		<br>
+	
+		{{!-- -------------------------------- display--}}
+		{{> title data="display :" big=true}}
+		<ul>
+			{{#each display}}
+				<li> {{this}} </li>
+			{{/each}}
+		</ul>
+		<br>
+	
+		{{!-- -------------------------------- graphics--}}
+		{{> title data="graphics :" big=true}}
+		<ul>
+			{{#each graphics}}
+				<li> {{this}} </li>
+			{{/each}}
+		</ul>
+		<br>
+	
+		{{!-- -------------------------------- ports--}}
+		{{> title data="ports :" big=true}}
+		<ul>
+			{{#each ports}}
+				<li> 
+					{{type}} - ({{count}})
+					<ul>
+						{{#each features}} 
+							<li> {{this}} </li>
+						{{/each}} 
+					</ul>
+				</li>
+			{{/each}}
+		</ul>
+		<br>
+
+		{{!-- -------------------------------- battery--}}
+		{{> title data="battery :" big=true}}
+		{{#with battery}}
+			<p> 
+				{{type}} - {{capacity}} <br>
+				life - {{life}} 
+			</p>
+		{{/with}}
+		<br>
+
+		{{!-- -------------------------------- weight--}}
+		{{> title data="weight :" big=false}}
+		<p> {{weight}} </p>
+		<br>
+
+		{{!-- -------------------------------- dimensions--}}
+		{{> title data="dimensions :" big=false}}
+		{{#with dimensions}}
+			<div>
+				height - {{height}} <br>
+				width - {{width}} <br>
+				depth - {{depth}}
+			</div>
+		{{/with}}
+		<br>
+
+		{{!-- -------------------------------- operating_system--}}
+		{{> title data="operating_system :" big=false}}
+		{{operating_system}} <br>
+		<br>
+		<hr>
+
+		{{!-- -------------------------------- accessories--}}
+		{{> title data="accessories :" big=false}}
+		<ul>
+			{{#each accessories}}
+				<li>
+					{{name}} - {{price}}
+				</li>
+			{{/each}}
+		</ul>
+		
+	{{/with}}
+</main>
