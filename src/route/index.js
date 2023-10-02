@@ -1,4 +1,6 @@
+// Підключаємо технологію express для back-end сервера
 const express = require('express')
+// Cтворюємо роутер - місце, куди ми підключаємо ендпоїнти
 const router = express.Router()
 
 // ================================================================ my var
@@ -30,7 +32,11 @@ var footer = {
 }
 
 // ================================================================ index
+// router.get Створює нам один ентпоїнт
+//           ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/', function (req, res) {
+  // res.render генерує нам HTML сторінку
+  //            ↙ cюди вводимо назву файлу з сontainer
   res.render('index', {})
 })
 
@@ -47,8 +53,8 @@ router.get('/summary', function (req, res) {
       summary: {
         title: 'Summary',
         text: `Open-minded for new technologies, with 1 years of experience in development. Whenever I start to
-              work on a new project I learn the domain and try to understand the idea of the project. Good team
-              player, every colleague is a friend to me.`,
+				work on a new project I learn the domain and try to understand the idea of the project. Good team
+				player, every colleague is a friend to me.`,
       },
       experience: {
         title: 'Other experience',
@@ -530,7 +536,6 @@ router.get('/program', function (req, res) {
 
 // ================================================================ web
 router.get('/web', function (req, res) {
-  //             ↙ cюди вводимо назву файлу з сontainer
   res.render('web', {
     layout: 'basic',
     web: {
@@ -658,10 +663,7 @@ router.get('/web', function (req, res) {
 })
 
 // ================================================================ js
-
 router.get('/js', function (req, res) {
-  // res.render генерує нам HTML сторінку
-  //            ↙ cюди вводимо назву файлу з сontainer
   res.render('js', {
     layout: 'basic',
     name: 'JavaScript',
@@ -735,271 +737,10 @@ router.get('/js', function (req, res) {
       },
     ],
   })
-  //                  ↑↑ сюди вводимо JSON дані
 })
-
-
-
-// router.get Створює нам один ентпоїнт
-
-router.get('/facebook', function (req, res) {
-  // res.render генерує нам HTML сторінку
-
-  //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('facebook', {
-    layout: 'basic',
-    name: 'Facebook',
-    users: [
-      {
-        id: 1,
-        name: 'John Doe',
-        gender: 'Male',
-        age: 30,
-        friends: [
-          {
-            id: 2,
-            name: 'Jane Smith',
-            gender: 'Female',
-            age: 27,
-            mutual_friends: [
-              {
-                id: 4,
-                name: 'Samantha Lee',
-                gender: 'Female',
-                age: 25,
-              },
-            ],
-          },
-          {
-            id: 5,
-            name: 'Mike Williams',
-            gender: 'Male',
-            age: 28,
-            mutual_friends: [
-              {
-                id: 7,
-                name: 'David Kim',
-                gender: 'Male',
-                age: 29,
-              },
-            ],
-          },
-        ],
-        // вивів
-        //-------------------------------------------------------------
-        // не вивів
-        groups: [
-          {
-            id: 1,
-            name: 'Hiking Enthusiasts',
-            // описание
-            description:
-              'A group for people who love hiking and the great outdoors',
-            // члены
-            members: [
-              {
-                id: 8,
-                name: 'Sarah Johnson',
-                gender: 'Female',
-                age: 25,
-              },
-            ],
-          },
-          {
-            id: 2,
-            name: 'Foodies United',
-            description:
-              'A group for food lovers to share recipes and restaurant recommendations',
-            members: [
-              {
-                id: 5,
-                name: 'Mike Williams',
-                gender: 'Male',
-                age: 28,
-              },
-              {
-                id: 8,
-                name: 'Sarah Johnson',
-                gender: 'Female',
-                age: 25,
-              },
-            ],
-          },
-        ],
-      },
-      {
-        id: 16,
-        name: 'Amy Lee',
-        gender: 'Female',
-        age: 30,
-        friends: [
-          {
-            id: 15,
-            name: 'Peter Kim',
-            gender: 'Male',
-            age: 32,
-            mutual_friends: [
-              {
-                id: 17,
-                name: 'David Chen',
-                gender: 'Male',
-                age: 33,
-              },
-              {
-                id: 19,
-                name: 'Erica Wong',
-                gender: 'Female',
-                age: 29,
-                mutual_friends: [
-                  {
-                    id: 20,
-                    name: 'Alex Lee',
-                    gender: 'Male',
-                    age: 31,
-                  },
-                ],
-              },
-            ],
-            groups: [
-              {
-                id: 3,
-                name: 'Travel Addicts',
-                description:
-                  'A group for people who love to travel and explore new places',
-                members: [
-                  {
-                    id: 22,
-                    name: 'Jackie Chen',
-                    gender: 'Female',
-                    age: 26,
-                  },
-                ],
-              },
-              {
-                id: 4,
-                name: 'Pet Lovers',
-                description:
-                  'A group for people who love their furry friends',
-                members: [
-                  {
-                    id: 16,
-                    name: 'Amy Lee',
-                    gender: 'Female',
-                    age: 30,
-                  },
-                  {
-                    id: 25,
-                    name: 'John Smith',
-                    gender: 'Male',
-                    age: 33,
-                  },
-                ],
-              },
-            ],
-          },
-        ],
-      },
-    ],
-
-// ================================================================ mac
-
-// router.get Створює нам один ентпоїнт
-router.get('/mac', function (req, res) {
-  // res.render генерує нам HTML сторінку
-  //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('mac', {
-    layout: 'basic',
-    name: 'Apple MacBook Pro',
-    description: 'The ultimate notebook for power users',
-    price: 1999.99,
-    category: 'Computers & Tablets',
-    // функции
-    features: {
-      processor: {
-        brand: 'Intel',
-        model: 'Core i9',
-        speed: '2.3 GHz',
-        cores: 8,
-        cache: '16 MB',
-      },
-      memory: {
-        type: 'DDR4',
-        size: '32 GB',
-        speed: '2666 MHz',
-      },
-      storage: {
-        type: 'SSD',
-        size: '1 TB',
-      },
-      display: {
-        size: '16 inches',
-        resolution: '3072x1920',
-        technology: 'Retina',
-        color_space: 'P3',
-        brightness: '500 nits',
-        refresh_rate: '60 Hz',
-      },
-      graphics: {
-        brand: 'AMD',
-        model: 'Radeon Pro 5500M',
-        memory: '4 GB GDDR6',
-      },
-      ports: [
-        {
-          type: 'Thunderbolt 3',
-          count: 4,
-          features: [
-            'Charging',
-            'DisplayPort',
-            'Thunderbolt (up to 40 Gbps)',
-            'USB 3.1 Gen 2 (up to 10 Gbps)',
-          ],
-        },
-        {
-          type: 'HDMI',
-          count: 1,
-        },
-      ],
-      battery: {
-        type: 'Lithium Polymer',
-        capacity: '100 Wh',
-        life: 'Up to 11 hours',
-      },
-      weight: '4.3 pounds',
-      dimensions: {
-        height: '0.64 inch',
-        width: '14.09 inches',
-        depth: '9.68 inches',
-      },
-      operating_system: 'macOS',
-      accessories: [
-        {
-          name: 'Apple Magic Keyboard',
-          price: 99.99,
-        },
-        {
-          name: 'Apple Magic Mouse 2',
-          price: 79.99,
-        },
-        {
-          name: 'USB-C to USB Adapter',
-          price: 19.99,
-        },
-      ],
-    },
-  })
-  //                  ↑↑ сюди вводимо JSON дані
-})
-// вивів
-//-------------------------------------------------------------
-// не вивів
 
 // ================================================================ car
-
-// router.get Створює нам один ентпоїнт
 router.get('/car', function (req, res) {
-  // res.render генерує нам HTML сторінку
-  //            ↙ cюди вводимо назву файлу з сontainer
   res.render('car', {
     layout: 'basic',
     make: 'Toyota',
@@ -1104,10 +845,316 @@ router.get('/car', function (req, res) {
       },
       total: 28990,
     },
-
   })
-  //                  ↑↑ сюди вводимо JSON дані
 })
+
+// ================================================================ mac
+router.get('/mac', function (req, res) {
+  res.render('mac', {
+    layout: 'basic',
+    name: 'Apple MacBook Pro',
+    description: 'The ultimate notebook for power users',
+    price: 1999.99,
+    category: 'Computers & Tablets',
+    // функции
+    features: {
+      processor: {
+        brand: 'Intel',
+        model: 'Core i9',
+        speed: '2.3 GHz',
+        cores: 8,
+        cache: '16 MB',
+      },
+      memory: {
+        type: 'DDR4',
+        size: '32 GB',
+        speed: '2666 MHz',
+      },
+      storage: {
+        type: 'SSD',
+        size: '1 TB',
+      },
+      display: {
+        size: '16 inches',
+        resolution: '3072x1920',
+        technology: 'Retina',
+        color_space: 'P3',
+        brightness: '500 nits',
+        refresh_rate: '60 Hz',
+      },
+      graphics: {
+        brand: 'AMD',
+        model: 'Radeon Pro 5500M',
+        memory: '4 GB GDDR6',
+      },
+      ports: [
+        {
+          type: 'Thunderbolt 3',
+          count: 4,
+          features: [
+            'Charging',
+            'DisplayPort',
+            'Thunderbolt (up to 40 Gbps)',
+            'USB 3.1 Gen 2 (up to 10 Gbps)',
+          ],
+        },
+        {
+          type: 'HDMI',
+          count: 1,
+        },
+      ],
+      battery: {
+        type: 'Lithium Polymer',
+        capacity: '100 Wh',
+        life: 'Up to 11 hours',
+      },
+      weight: '4.3 pounds',
+      dimensions: {
+        height: '0.64 inch',
+        width: '14.09 inches',
+        depth: '9.68 inches',
+      },
+      operating_system: 'macOS',
+      accessories: [
+        {
+          name: 'Apple Magic Keyboard',
+          price: 99.99,
+        },
+        {
+          name: 'Apple Magic Mouse 2',
+          price: 79.99,
+        },
+        {
+          name: 'USB-C to USB Adapter',
+          price: 19.99,
+        },
+      ],
+    },
+  })
+})
+
+// ================================================================ facebook
+router.get('/facebook', function (req, res) {
+  res.render('facebook', {
+    layout: 'basic',
+    name: 'Facebook',
+    users: [
+      {
+        id: 1,
+        name: 'John Doe',
+        gender: 'Male',
+        age: 30,
+        friends: [
+          {
+            id: 2,
+            name: 'Jane Smith',
+            gender: 'Female',
+            age: 27,
+            mutual_friends: [
+              {
+                id: 4,
+                name: 'Samantha Lee',
+                gender: 'Female',
+                age: 25,
+              },
+            ],
+          },
+          {
+            id: 5,
+            name: 'Mike Williams',
+            gender: 'Male',
+            age: 28,
+            mutual_friends: [
+              {
+                id: 7,
+                name: 'David Kim',
+                gender: 'Male',
+                age: 29,
+              },
+            ],
+          },
+        ],
+        groups: [
+          {
+            id: 1,
+            name: 'Hiking Enthusiasts',
+            description:
+              'A group for people who love hiking and the great outdoors',
+            members: [
+              {
+                id: 8,
+                name: 'Sarah Johnson',
+                gender: 'Female',
+                age: 25,
+              },
+            ],
+          },
+          {
+            id: 2,
+            name: 'Foodies United',
+            description:
+              'A group for food lovers to share recipes and restaurant recommendations',
+            members: [
+              {
+                id: 5,
+                name: 'Mike Williams',
+                gender: 'Male',
+                age: 28,
+              },
+              {
+                id: 8,
+                name: 'Sarah Johnson',
+                gender: 'Female',
+                age: 25,
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: 16,
+        name: 'Amy Lee',
+        gender: 'Female',
+        age: 30,
+        friends: [
+          {
+            id: 15,
+            name: 'Peter Kim',
+            gender: 'Male',
+            age: 32,
+            mutual_friends: [
+              {
+                id: 17,
+                name: 'David Chen',
+                gender: 'Male',
+                age: 33,
+              },
+              {
+                id: 19,
+                name: 'Erica Wong',
+                gender: 'Female',
+                age: 29,
+                mutual_friends: [
+                  {
+                    id: 20,
+                    name: 'Alex Lee',
+                    gender: 'Male',
+                    age: 31,
+                  },
+                ],
+              },
+            ],
+            groups: [
+              {
+                id: 3,
+                name: 'Travel Addicts',
+                description:
+                  'A group for people who love to travel and explore new places',
+                members: [
+                  {
+                    id: 22,
+                    name: 'Jackie Chen',
+                    gender: 'Female',
+                    age: 26,
+                  },
+                ],
+              },
+              {
+                id: 4,
+                name: 'Pet Lovers',
+                description:
+                  'A group for people who love their furry friends',
+                members: [
+                  {
+                    id: 16,
+                    name: 'Amy Lee',
+                    gender: 'Female',
+                    age: 30,
+                  },
+                  {
+                    id: 25,
+                    name: 'John Smith',
+                    gender: 'Male',
+                    age: 33,
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  })
+})
+
+// ================================================================ task21
+router.get('/task21', function (req, res) {
+  res.render('task21', {
+    layout: 'basic',
+    heading: {
+      main: {
+        title: 'JavaScript',
+        text: 'JavaScript is a popular high-level, dynamic, and interpreted programming language.',
+        button_text: {
+          solid: 'Open page',
+          outline: 'Add to cart',
+        },
+      },
+      second: {
+        title: 'Stack Overflow',
+        text: 'First-class functions',
+        button_text: {
+          solid: 'Open page',
+          outline: 'Add to cart',
+        },
+      },
+      subblock: {
+        title: 'JavaScript Weekly',
+        text: 'Prototype-based inheritance newsletter',
+        button_text: {
+          solid: 'Open page',
+          outline: 'Add to cart',
+        },
+      },
+    },
+    nested_display: {
+      title: 'HTML',
+      children_display: {
+        title: 'Outdated HTML tags',
+        text: 'tags that have been identified as deprecated and not recommended for use in HTML version 5',
+        button: {
+          text: 'Орen',
+        },
+      },
+      header_text: 'Sections',
+      button: {
+        text: 'Learn more',
+      },
+    },
+    paragraph: {
+      title: 'About modules',
+      text: 'Modules with import/export statements',
+
+      button: {
+        text: 'Open link page',
+        url: 'https://google.com',
+      },
+      list_name: [
+        {
+          text: 'Github',
+          url: 'https://github.com/',
+        },
+        {
+          text: 'Bootstrap',
+          url: 'https://getbootstrap.com/',
+        },
+      ],
+    },
+  })
+})
+// вивів
+//-------------------------------------------------------------
+// не вивів
 
 // ================================================================
 
