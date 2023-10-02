@@ -1,8 +1,6 @@
-{{!-- start--------------------------------------------------------------- heading --}}
 <div class="card">
 	<div class="card-body">
 		{{#with heading}}
-			{{!-- start--------------------------------------------------------------- main --}}
 			{{#with main}}
 				<div class="card">
 					<div class="card-body">
@@ -17,9 +15,7 @@
 					</div>
 				</div>
 			{{/with}}
-			{{!-- finish--------------------------------------------------------------- main --}}
 			<br>
-			{{!-- start--------------------------------------------------------------- second --}}
 			{{#with second}}
 				<div class="card">
 					<div class="card-body">
@@ -34,9 +30,8 @@
 					</div>
 				</div>
 			{{/with}}
-			{{!-- finish--------------------------------------------------------------- second --}}
 			<br>
-			{{!-- start--------------------------------------------------------------- sub block --}}
+
 			{{#with subblock}}
 				<div class="card">
 					<div class="card-body">
@@ -51,22 +46,18 @@
 					</div>
 				</div>
 			{{/with}}
-			{{!-- finish--------------------------------------------------------------- subblock --}}
 		{{/with}}
 	</div>
 </div>
-{{!-- finish--------------------------------------------------------------- heading --}}
 
 <br>
 
-{{!-- start--------------------------------------------------------------- nested_display --}}
 <div class="card">
 	<div class="card-body">
 		{{#with nested_display}}
 			<div class="display-1">
 				{{title}}
 			</div>
-			{{!-- start--------------------------------------------------------------- children_display --}}
 			<div class="card">
 				<div class="card-body">
 					{{#with children_display}}
@@ -75,31 +66,24 @@
 						</div>
 						<br>
 						<p> {{text}} </p>
-						{{!-- start--------------------------------------------------------------- button --}}
 						{{#with button}}
 							<button type="button" class="btn btn-warning"> {{text}} </button>
 						{{/with}}
-						{{!-- finish--------------------------------------------------------------- button --}}
 					{{/with}}
 				</div>
 			</div>
-			{{!-- finish--------------------------------------------------------------- children_display --}}
 			<br>
 			<h6> {{header_text}} </h6>
 			<br>
-			{{!-- start--------------------------------------------------------------- button --}}
 			{{#with button}}
 				<button type="button" class="btn btn-info"> {{text}} </button>
 			{{/with}}
-			{{!-- finish--------------------------------------------------------------- button --}}
 		{{/with}}
 	</div>
 </div>
-{{!-- finish--------------------------------------------------------------- nested_display --}}
 
 <br>
 
-{{!-- start--------------------------------------------------------------- paragraph --}}
 <div class="card">
 	<div class="card-body">
 		{{#with paragraph}}
@@ -112,19 +96,16 @@
 			<br>
 			<div class="card">
 				<div class="card-body">
-				{{!-- start--------------------------------------------------------------- list_name --}}
 				<ul>
 					{{#each list_name}}<br>
 						<li> <a target="_blank" href="{{url}}"  class="btn btn-text-primary"> {{text}} </a> </li> 
 					{{/each}}
 				</ul>
-				{{!-- finish--------------------------------------------------------------- list_name --}}
 				</div>
 			</div>
 		{{/with}}
 	</div>
 </div>
-{{!-- finish--------------------------------------------------------------- paragraph --}}
 
 
 
