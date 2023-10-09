@@ -1,10 +1,11 @@
 html {
-  max-width: 720px;
+  /* max-width: 720px; */
+  max-width: 1920px;
 }
 
 body {
   margin: 32px;
-  background: #fff;
+  background: #260f95;
 }
 
 main,
