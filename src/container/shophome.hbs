@@ -1,0 +1,207 @@
+
+{{!-- ==================================================================================== header --}}
+<header>
+{{!-- ==================================================================================== nav --}}
+	{{#with navigation}}
+		<nav class="row mb-5">
+				<div class="card col-12">
+					<div class="card-body">
+						<div class="nav">
+							{{#each links}}
+								<div class="nav-item col-0">
+									<a target="_blank"  href="{{href}}" class="nav-link"> {{text}} </a>
+								</div>
+							{{/each}}
+							{{#with links}}
+								<div class="nav-item col-0">
+									<a target="_blank" href="#" class="nav-link disabled"> Disabled </a>
+								</div>
+							{{/with}}
+						</div>
+					</div>
+				</div>
+		</nav>
+	{{/with}}
+	{{#with newsBlock}}
+		<h1 class="text-center mb-4"> {{title}} </h1>
+		<div class="row">
+			{{#each cards}}
+				<div class="col-3 mb-4">
+					<div class="card text-bg-dark">
+						<div class="card-header">
+							<h6> {{title}} </h6> 
+							{{#if isNew}} 
+								<span class="text-capitalize text-bg-success badge rouded-pill p-2 px-3"> 
+									нова 
+								</span> 
+							{{/if}} 
+							{{#if isTop}} 
+								<span class="text-capitalize text-bg-danger badge rouded-pill p-2"> 
+									топ 
+								</span> 
+							{{/if}}
+						</div>
+						<div class="card-body">
+							<div class="card-item">
+								<p> {{description}}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			{{/each}}
+		</div>
+	{{/with}}
+</header>
+<hr class="mb-5">
+
+{{!-- ==================================================================================== main --}}
+<main class="">
+
+{{!-- ==================================================================================== goodsBlock --}}
+	{{#with goodsBlock}}
+		<div class="row gy-5 gx-2">
+			<div class="nav nav-tabs col-12">  
+{{!-- ==================================================================================== tabs --}}
+				{{#each tabs}}
+					{{#unless isDisabled}}
+						{{#unless isActive}}
+							<div class="nav-item col-2 text-center">  
+								<a href="#" class="nav-link"> {{text}} </a>
+							</div>
+						{{/unless}}
+					{{/unless}}
+					{{#if isActive}}
+						<div class="nav-item col-2 text-center">  
+							<a href="#" class="nav-link active"> <b> {{text}} </b> </a>
+						</div>
+					{{/if}}
+					{{#if isDisabled}}
+						<div class="nav-item col-2 text-center">  
+							<a href="#" class="nav-link disabled"> {{text}} </a>
+						</div>
+					{{/if}}
+				{{/each}}
+			</div>
+		</div>
+
+{{!-- ==================================================================================== cards --}}
+			<div class="row">
+		{{#each cards}}
+			<div class="col-4 mt-5">
+				<div class="card">
+					<img class="card-img-top" src="{{image}}" alt="picture">
+					<div class="card-body">
+						<h5 class="card-title"> 
+							{{title}} 
+							{{#if isHot}}
+								<span class="text-capitalize text-bg-warning badge rouded-pill p-2 px-3"> 
+									hot 
+								</span> 
+							{{/if}} 
+							{{#if isNew}}
+								<span class="text-capitalize text-bg-primary badge rouded-pill p-2 px-3"> 
+									нове 
+								</span> 
+							{{/if}} 
+						</h5>
+						<p> {{description}} </p>
+					</div>
+				</div>
+			</div>
+		{{/each}}
+			</div>
+	{{/with}}
+	<hr class="my-5">
+
+{{!-- ==================================================================================== subscribe --}}
+	{{#with subscribe}}
+		<div class="card text-bg-dark">
+			<div class="card-body"> 
+				<h2> {{header}} </h2>
+				<p> {{description}} </p>
+				{{#each buttons}}
+					<div class="card-item"> 
+						<a href="{{link}}" class="btn btn-primary mb-3"> {{text}} </a>
+					</div>
+				{{/each}}
+			</div>
+		</div>
+	{{/with}}
+	<hr class="my-5">
+
+{{!-- ==================================================================================== service --}}
+	{{#with service}}
+		<div class="card text-bg-success text-center">
+			<div class="card-body"> 
+				<h2 class="mb-4"> {{title}} </h2>
+				<p class="mb-4"> {{description}} </p>
+				{{#each buttons}}
+					<div class="card-item"> 
+						<a href="{{link}}" class="btn btn-primary mb-3"> {{text}} </a>
+					</div>
+				{{/each}}
+			</div>
+		</div>
+	{{/with}}
+	<hr class="my-5">
+</main>
+
+{{!-- ==================================================================================== footer --}}
+<footer class="row">
+	{{#each footer}}
+		<div class="col-2">
+			{{#each this}}
+				<div>
+					<a href="link" class="btn btn-link ms-5 {{#if @last}}disabled{{/if}}"> {{text}} </a>
+				</div>
+			{{/each}}
+		</div>
+	{{/each}}
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
