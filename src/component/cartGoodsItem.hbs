@@ -1,0 +1,95 @@
+<div class="card mb-4">
+	<div class="card-body row g-2">
+{{!-- ========================================================================================= GOODSbLOCK/ image --}}
+		<div class="col-2">
+				<img class="card-img-top" src="{{image}}" alt="{{name}}">
+		</div>
+
+{{!-- ========================================================================================= GOODSbLOCK/ description --}}
+		<div class="col-4 py-2">
+				<h2 class="card-title pt-2 mb-4"> {{name}} </h2>
+				<p> {{description}} </p>
+		</div>
+
+{{!-- ========================================================================================= GOODSbLOCK/ price --}}
+		{{#with price}}
+			<div class="col-2 pt-5 ps-5"> 
+				<h6 class="mb-3 mt-3"> {{title}} </h6>
+				<h3> {{value}} </h3>
+			</div>
+		{{/with}}
+
+{{!-- ========================================================================================= GOODSbLOCK/ amount --}}
+		<div class="col-2 pt-5 mt-4">
+			<p class="ps-2"> {{amount}} </p>
+		</div>
+
+{{!-- ========================================================================================= GOODSbLOCK/ buttons --}}
+		<div class="col-2">
+			{{#each buttons}}
+				<div class="ps-4{{#if @first}} mt-2 {{/if}} mb-4 ">
+					<button type="button" class="{{#if isPrimary}} btn btn-primary {{/if}}
+															{{#if isDanger}} btn btn-outline-danger {{/if}}"> 
+						{{text}} 
+					</button>
+				</div>
+			{{/each}}
+		</div>
+
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{!-- ==================ряд --}}
+{{!-- <div class="row mb-4"> --}}
+	{{!-- <div class="card row"> --}}
+
+
+
+
+		{{!-- <div class="row"> --}}
+
+
+{{!-- ==================колока --}}
+
+			{{!-- <div class="col-2"> --}}
+			{{!-- </div> --}}
+
+
+
+			{{!-- <div class="card-body"> --}}
+				{{!-- <div class="col-8"> --}}
+				{{!-- </div> --}}
+{{!-- ========================================================================================= GOODSbLOCK/ buttons --}}
+				{{!-- <div class="col-2"> --}}
+				{{!-- </div> --}}
+			{{!-- </div> --}}
+
+				
+
+
+
+		{{!-- </div> --}}
+
+
+
+	{{!-- </div> --}}
+{{!-- </div> --}}

@@ -1,0 +1,126 @@
+{{!-- ! ########################################################################################## HEADER --}}
+<header>
+{{!-- ==================================================================================== NAV --}}
+	{{#with navigation}}
+		<nav class="row mb-5">
+			<div class="card col-12">
+				<div class="card-body">
+					<div class="nav">
+{{!-- ==================================================================================== NAV/ links --}}
+						{{#each links}}
+							<div class="nav-item">
+								<a target="_blank"  href="{{href}}" class="nav-link"> {{text}} </a>
+							</div>
+						{{/each}}
+						
+						{{#with links}}
+							<div class="nav-item">
+								<a target="_blank" href="#" class="nav-link disabled"> Disabled </a>
+							</div>
+						{{/with}}
+					</div>
+				</div>
+			</div>
+		</nav>
+	{{/with}}
+
+{{!-- ==================================================================================== HEADER --}}
+	{{#with header}}
+		<h1 class="mb-4"> {{title}} </h1>
+
+{{!-- ==================================================================================== HEADER/ button --}}
+		{{#with button}}
+			<a href="link" class="btn btn-outline-dark "> {{text}} </a>
+		{{/with}}
+	{{/with}}
+</header>
+<hr class="my-5"> 
+
+{{!-- ! ########################################################################################## MAIN --}}
+<main>
+{{!-- ==================================================================================== GOODSbLOCK --}}
+	{{#each goodsBlock}}
+		{{> cartGoodsItem}}
+	{{/each}}
+	<hr class="my-5"> 
+
+{{!-- ==================================================================================== TOTAL --}}
+	{{#with total}}
+		<h2> {{title}} </h2>
+		<p class="display-6"> {{amount}} </p> 
+		<div class="mb-4">
+			<small> {{delivery}} </small>
+		</div>
+		{{#each buttons}}
+		<div class="mb-3">
+						<a href="link" class="{{#if isSuccess}} btn btn-success {{/if}}
+															{{#if isOutline}} btn btn-outline-success {{/if}}"> {{text}} </a>
+		</div>
+		{{/each}}
+	{{/with}}
+	<hr class="my-5"> 
+
+{{!-- ==================================================================================== GOODSOTHERBLOCK --}}
+	{{#with goodsOtherBlock}}
+		<h2 class="text-center mb-3"> {{title}} </h2>
+
+{{!-- ==================================================================================== GOODSOTHERBLOCK/ cards --}}
+		<div class="row gy-2">
+			{{#each cards}}
+				<div class="col-4">
+					<div class="card">
+						<img class="card-img-top" src="https://picsum.photos/400/200" alt="product photo">
+						<div class="card-body">
+							<h5 class="card-titles"> 
+								{{title}} 
+								{{#if isHot}} 
+									<span class="text-capitalize text-bg-warning badge rouded-pill p-2 px-3"> 
+										hot! 
+									</span> 
+								{{/if}} 
+								{{#if idNew}} 
+									<span class="text-capitalize text-bg-primary badge rouded-pill p-2 px-3 ms-2"> 
+										new 
+									</span> 
+								{{/if}} 
+							</h5>
+							<p> 
+								{{description}}
+							</p>
+						</div>
+					</div>
+				</div>
+			{{/each}}
+		</div>
+	{{/with}}
+	<hr class="my-5"> 
+
+{{!-- ==================================================================================== SUBSCRIBE --}}
+	{{#with subscribe}}
+		<div class="card text-bg-dark">
+			<div class="card-body">
+				<h2> {{header}} </h2>
+				<p> {{description}}</p>
+				{{#each buttons}}
+					<div class="mb-2">
+						<a type="button" href="{{link}}" class="btn btn-primary"> {{text}} </a>
+					</div>
+				{{/each}}
+			</div>
+		</div>
+	{{/with}}
+</main>
+<hr class="my-5"> 
+
+{{!-- ! ########################################################################################## FOOTER --}}
+<footer class="row">
+	{{#each footer}}
+		<div class="col-2">
+			{{#each this}}
+				<div class="me-1">
+					<a href="link" class="btn btn-link {{#if @last}}disabled{{/if}}"> {{text}} </a>
+				</div>
+			{{/each}}
+		</div>
+	{{/each}}
+</footer>
