@@ -1,25 +1,146 @@
-<div>
-	{{#with main}}
-		<main>
-			<section>
-				{{> title data="Summary" big=true}}
-				<div>
-					<p>
-						{{summary.text}}
-					</p>
-				</div>
-			</section>
 
-			{{#with experience}}
+{{!-- Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"--}}
+{{!-- <div> --}}
+	{{!--2 <header> --}}
+		{{!--2 <div> --}}
+			{{!--0 <h1>Dmytro Ivanov | Resume</h1> --}}
+			{{!-- ↓↑↓   ↑↓↑ --}}
+			{{!--1 <h1>{{title}}</h1> --}}
+			{{!-- ↓↑↓   ↑↓↑ --}}
+			{{!--2 <h1>{{name.firstname}} {{name.lastname}}</h1> --}}
+		{{!--2 </div> --}}
+
+		{{!--2 <div> --}}
+			{{!--1 <b>Junior Fullstack JS Developer</b> --}}
+			{{!--2 <b>{{position}}</b> --}}
+		{{!--2 </div> --}}
+
+		{{!--3 <div> --}}
+			{{!--3 <em>{{salary}}</em> --}}
+		{{!-- 3 </div>   <br>   <hr> --}}
+	{{!--1 </header> --}}
+						{{!-- ↑↑↑   ↑↑↑   ↑↑↑   ↑↑↑ - header - визначили як header 
+						який повторюється в деяких сторінках (summary, skills, education, work) --}}
+
+	{{!--* <main> --}}
+	{{!-- ↓↑↓   ↑↓↑ --}}
+	<div>
+		{{#with main}}
+			<main>
 				<section>
-					{{> title data=title big=false}}
+					{{!--0 <div> --}}
+						{{!--0 <h2>Summary</h2> --}}
+					{{!--0 </div> --}}
+					{{!-- ↓↑↓   ↑↓↑ --}}
+
+					{{!--1 {{> title data="Summary"}} --}}
+					{{!-- ↓↑↓   ↑↓↑ --}}
+
+					{{> title data="Summary" big=true}}
+
 					<div>
 						<p>
-							{{text}}
+                    {{!--0 Open-minded for new technologies, with 1 years of experience in development. Whenever I start to --}}
+                    {{!--0 work on a new project I learn the domain and try to understand the idea of the project. Good team --}}
+                    {{!--0 player, every colleague is a friend to me. --}}
+							{{!-- ↓↑↓   ↑↓↑ --}}
+
+							{{summary.text}}
 						</p>
 					</div>
 				</section>
-			{{/with}}
-		</main>
-	{{/with}}
-</div>
+
+				{{#with experience}}
+					<section>
+						{{!--0 <div> --}}
+							{{!--0 <h2>Other experience</h2> --}}
+						{{!--0 </div> --}}
+						{{!-- ↓↑↓   ↑↓↑ --}}
+
+						{{!--1 {{> title data=title}} --}}
+						{{!-- ↓↑↓   ↑↓↑ --}}
+
+						{{> title data=title big=false}}
+
+						<div>
+							<p>
+								{{!--0 Pet project for parsing sport betting data from different platforms ( odds ) and sport statistics ( --}}
+								{{!--0 tournament position, goals etc), analyzing by simple mathematics models and preparing probability --}}
+								{{!--0 for such events like: money line - first win / draw / second win, totals etc. --}}
+								{{!-- ↓↑↓   ↑↓↑ --}}
+
+								{{text}}
+							</p>
+						</div>
+					</section>
+				{{/with}}
+			</main>
+		{{/with}}
+	</div>
+
+        {{!--* <section> --}}
+            {{!--* <div> --}}
+                {{!--* <p> --}}
+                {{!--* </p> --}}
+            {{!--* </div> --}}
+        {{!--* </section> --}}
+    {{!--* </main> --}}
+
+        {{!-- <hr> --}}
+        {{!-- <br> --}}
+        {{!-- <a href="mailto:dmytro@mail.com">dmytro@mail.com</a> / --}}
+        {{!-- <a href="{{social.email.href}}">{{social.email.text}}</a> / --}}
+
+        {{!-- <a href="tel:+380670000123">+380670000123</a> / --}}
+        {{!-- <a href="{{social.phone.href}}">{{social.phone.text}}</a> / --}}
+
+        {{!-- <a href="https://www.linkedin.com/in/dmytro-test" target="_blank">LinkedIn</a> --}}
+        {{!-- <a href="{{social.LinkedIn.href}}" target="_blank">{{social.LinkedIn.text}}</a> --}}
+
+				{{!-- {{#with social}}
+					<a href="{{email.href}}">{{email.text}}</a> /
+					<a href="{{phone.href}}">{{phone.text}}</a> /
+					<a href="{{LinkedIn.href}}" target="_blank">{{LinkedIn.text}}</a>
+				{{/with}} --}}
+
+				{{!-- {{#with social}}
+					{{#with email}}
+						<a href="{{href}}">{{text}}</a> /
+					{{/with}}
+					{{#with phone}}
+						{{<a href="{{href}}">{{text}}</a> /}}
+					{{/with}}
+					{{#with LinkedIn}}
+						<a href="{{href}}" target="_blank">{{text}}</a>
+					{{/with}}
+				{{/with}} --}}
+
+				{{!-- {{#with social}}
+					{{#with email}}
+						{{> link}}
+					{{/with}}
+					{{#with phone}}
+						{{> link}}
+					{{/with}}
+					{{#with LinkedIn}}
+						{{> link}}
+					{{/with}}
+				{{/with}} --}}
+
+				{{!-- {{#with social}}
+						{{> link href=email.href text=email.text}}
+						{{> link href=phone.href text=phone.text}}
+						{{> link href=LinkedIn.href text=LinkedIn.text}}
+				{{/with}} --}}
+
+				{{!--* {{#with social}} --}}
+						{{!--* {{> link data=email}} --}}
+						{{!--* {{> link data=phone}} --}}
+						{{!--* {{> link data=LinkedIn}} --}}
+				{{!--* {{/with}} --}}
+		{{!-- </footer> --}}
+
+{{!-- </div> --}}
+{{!-- Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+		Адже наш layout/default.hbs має вже структуру HTML--}}
