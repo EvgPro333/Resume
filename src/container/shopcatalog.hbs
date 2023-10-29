@@ -1,0 +1,177 @@
+{{!-- ! ########################################################################################## HEADER --}}
+<header>
+{{!-- ==================================================================================== NAV --}}
+	{{#with navigation}}
+		<nav class="row mb-5 ms-1">
+			<div class="card col-12">
+				<div class="card-body">
+					<div class="nav">
+{{!-- ==================================================================================== NAV/ Links --}}
+						{{#each links}}
+							<div class="nav-item">
+								<a target="_blank"  href="{{href}}" class="nav-link"> {{text}} </a>
+							</div>
+						{{/each}}
+						
+						{{#with links}}
+							<div class="nav-item">
+								<a target="_blank" href="#" class="nav-link disabled"> Disabled </a>
+							</div>
+						{{/with}}
+					</div>
+				</div>
+			</div>
+		</nav>
+	{{/with}}
+
+{{!-- ==================================================================================== HEADER/ Breadcrumb --}}
+	<div>
+		<ol class="breadcrumb">
+			{{#each breadcrumb}}
+				<li class="breadcrumb-item">
+					<a href="{{url}}"  class="{{#if @last}} text-dark {{/if}}"> {{name}} </a>
+				</li>
+			{{/each}}
+		</ol>
+	</div>
+
+{{!-- ==================================================================================== HEADER/ Header --}}
+		<h1 class="mt-5 mb-3"> {{header}} </h1>
+</header>
+
+{{!-- ! ########################################################################################## MAIN --}}
+<main>
+
+{{!-- ==================================================================================== MAIN/ SortBlock --}}
+	<div class="row g-2 mb-5">
+		{{#each sortBlock}}
+			<div class="col-3">
+				<select class="form-select form-select">
+					<option selected > {{placeholder}} </option>
+					{{#each options}}
+						<option  value="{{value}}"> {{text}} </option>
+					{{/each}}
+				</select>
+			</div>
+		{{/each}}
+	</div>
+
+{{!-- ==================================================================================== MAIN/ FilterBlock --}}
+		
+{{!--* ==================================================================================== MAIN/ col-4 --}}
+	<div class="row">
+		<form action="" class="col-4">
+			{{#with filterBlock}}
+				<div class="card">
+					<div class="card-body">
+{{!-- ==================================================================================== MAIN/ FilterBlock/ sellers --}}
+						{{#with sellers}}
+							<h6 class="mb-3"> {{title}} </h6>
+							<div class="col-6 mb-3">
+								{{#each list}}
+									<div class="form-check">
+										<input name="sellers" type="checkbox" class="form-check-input">
+										<div class="form-label"> {{value}} </div>
+									</div>
+								{{/each}}
+							</div>
+						{{/with}}
+						<hr class=""> 
+
+{{!-- ==================================================================================== MAIN/ FilterBlock/ brands --}}
+						{{#with brands}}
+							<h6 class="mb-3"> {{title}} </h6>
+							<div class="col-12 mb-3">
+								{{#with input}}
+									<div class="mb-3">
+										<input typetype="text" placeholder="{{placeholder}}" class="form-control">
+									</div>
+								{{/with}}
+							</div>
+
+{{!-- ==================================================================================== MAIN/ FilterBlock/ brands/ options --}}
+							<div class="mb-3">
+								{{#each options}}
+									<div class="form-check">
+										<input name="sellers" type="checkbox" class="form-check-input">
+										<div class="form-label"> {{value}} </div>
+									</div>
+								{{/each}}
+							</div>
+							<hr class=""> 
+						{{/with}}
+						
+{{!-- ==================================================================================== MAIN/ FilterBlock/ price --}}
+						{{#with price}}
+							<h6 class="mb-3"> {{title}} </h6>
+							{{#with range}}
+								<div class="">
+									<input type="text" class="form-control mb-3" placeholder="{{from}}">
+									<input type="text" class="form-control" placeholder="{{to}}">
+								</div>
+							{{/with}}
+
+{{!-- ==================================================================================== MAIN/ FilterBlock/ price/ button --}}
+							{{#with button}}
+								<div class="me-1 mt-3">
+									<a href="{{link}}" class="btn btn-outline-dark px-3"> {{text}} </a>
+								</div>
+							<hr class=""> 
+							{{/with}}
+						{{/with}}
+
+{{!-- ==================================================================================== MAIN/ FILTERlIST/ --}}
+						{{#each filterList}}
+							<h6 class="mb-3"> {{title}} </h6>
+							{{#each options}}
+								<div class="form-check">
+									<input name="{{value}}" type="checkbox" class="form-check-input">
+									<div class="form-label"> {{value}} </div>
+								</div>
+							{{/each}}
+						{{/each}}
+
+
+
+
+
+					</div>
+				</div>
+			{{/with}}
+		</form>
+
+{{!--* ==================================================================================== MAIN/ col-8 --}}
+		<div class="col-8">
+			{{> catalogItem}}
+		</div>
+	</div>
+
+{{!-- ==================================================================================== SERVICE --}}
+	{{#with service}}
+		<div class="card text-bg-success text-center my-5">
+			<div class="card-body">
+				<h2> {{title}} </h2>
+				<p> {{description}}</p>
+				{{#each buttons}}
+					<div class="mb-2">
+						<a type="button" href="{{link}}" class="btn btn-primary"> {{text}} </a>
+					</div>
+				{{/each}}
+			</div>
+		</div>
+	{{/with}}
+	<hr class=""> 
+</main>
+
+{{!-- ! ########################################################################################## FOOTER --}}
+<footer class="row ms-2">
+	{{#each footer}}
+		<div class="col-2">
+			{{#each this}}
+				<div class="me-1">
+					<a href="link" class="btn btn-link {{#if @last}}disabled{{/if}}"> {{text}} </a>
+				</div>
+			{{/each}}
+		</div>
+	{{/each}}
+</footer>
