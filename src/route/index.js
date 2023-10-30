@@ -2339,9 +2339,15 @@ router.get('/shopcart', function (req, res) {
   })
 })
 
+//<< shopcatalog
 // ================================================================ shopcatalog
 router.get('/shopcatalog', function (req, res) {
   res.render('shopcatalog', {
+//=======
+// ================================================================ shopprofile
+router.get('/shopprofile', function (req, res) {
+  res.render('shopprofile', {
+//>>>>>>> master
     layout: 'shop',
     navigation: {
       links: [
@@ -2359,6 +2365,7 @@ router.get('/shopcatalog', function (req, res) {
         },
       ],
     },
+//<<<<< shopcatalog
     breadcrumb: [
       { name: 'Головна', url: 'https://github.com/' },
       {
@@ -2518,10 +2525,117 @@ router.get('/shopcatalog', function (req, res) {
         buttons: [
           {
             text: 'Купити зараз',
+//=======
+
+    header: 'Мої замовлення',
+
+    purchase: {
+      tabs: ['Всі замовлення', 'Гарантія та повернення'],
+      actionBlock: {
+        input: { placeholder: 'Placeholder' },
+        buttons: [
+          {
+            text: 'Знайти',
+            link: 'https://www.youtube.com/',
+            isSuccess: true,
+          },
+          {
+            text: 'Виділити все',
+            link: 'https://www.youtube.com/',
+            isOutline: true,
+          },
+          {
+            text: 'Очистити все',
+            link: 'https://www.youtube.com/',
+            isDanger: true,
+          },
+        ],
+      },
+      itemList: [
+        {
+          number: '№12587463 від 01.01.2023',
+          status: 'Виконано',
+          amount: { title: 'Сума', value: '25 000 ₴' },
+          images: ['https://picsum.photos/110/100'],
+          button: {
+            text: 'Детальніше',
+            link: 'https://www.youtube.com/',
+            isPrimary: true,
+          },
+        },
+        {
+          number: '№12587463 від 01.01.2023',
+          status: 'Виконано',
+          amount: { title: 'Сума', value: '25 000 ₴' },
+          images: [
+            'https://picsum.photos/110/100',
+            'https://picsum.photos/110/100',
+            'https://picsum.photos/110/100',
+          ],
+          button: {
+            text: 'Детальніше',
+            link: 'https://www.youtube.com/',
+            isPrimary: true,
+          },
+        },
+        {
+          number: '№12587463 від 01.01.2023',
+          status: 'Виконано',
+          amount: { title: 'Сума', value: '25 000 ₴' },
+          images: [
+            'https://picsum.photos/110/100',
+            'https://picsum.photos/110/100',
+          ],
+          button: {
+            text: 'Детальніше',
+            link: 'https://www.youtube.com/',
+            isPrimary: true,
+          },
+        },
+      ],
+    },
+    userInfo: {
+      title: 'Особиста інформація',
+      profileData: {
+        title: 'Особисті дані',
+        fullName: {
+          surname: {
+            title: 'Прізвище',
+            value: 'Іванов',
+          },
+          name: {
+            title: 'Ім’я',
+            value: 'Іван',
+          },
+          middleName: {
+            title: 'По-батькові',
+            value: 'Іванович',
+          },
+        },
+        otherInfo: {
+          birthday: {
+            title: 'Дата народження',
+            value: '01.01.2000',
+          },
+          sex: {
+            title: 'Стать',
+            value: 'Чоловіча',
+          },
+          language: {
+            title: 'Мова',
+            value: 'Українська',
+          },
+        },
+        //  buttons - був рівнем нижче підняв
+        buttons: [
+          {
+            text: 'Редагувати',
+//>>>>>>> master
             link: 'https://www.youtube.com/',
             isPrimary: true,
           },
           {
+//<<<<< shopcatalog
             text: 'Купити в кредит',
             link: 'https://www.youtube.com/',
             isSecondary: true,
@@ -2614,6 +2728,76 @@ router.get('/shopcatalog', function (req, res) {
           link: 'https://www.youtube.com/',
         },
       ],
+//=======
+            text: 'Очистити',
+            link: 'https://www.youtube.com/',
+            isSecondary: true,
+          },
+          {
+            text: 'Видалити',
+            link: 'https://www.youtube.com/',
+            isDanger: true,
+          },
+        ],
+      },
+      //  buttons - був тут
+      // вивів
+      //-------------------------------------------------------------
+      // не вивів
+      recipients: {
+        title: 'Отримувачі',
+        users: [
+          {
+            name: 'Іванов Іван Іванович',
+            phone: '+38 (098) 222 22 22',
+            button: {
+              text: 'Редагувати',
+              link: 'https://www.youtube.com/',
+            },
+          },
+          {
+            name: 'Петров Петро Петрович',
+            phone: '+38 (098) 111 11 11',
+            button: {
+              text: 'Редагувати',
+              link: 'https://www.youtube.com/',
+            },
+          },
+        ],
+      },
+      contacts: {
+        title: 'Контакти',
+        contactData: [
+          {
+            title: 'Номер телефону',
+            value: '+38 (098) 222 22 22',
+            button: {
+              text: 'Редагувати',
+              link: 'https://www.youtube.com/',
+              isPrimary: true,
+            },
+          },
+          {
+            title: 'Додатковий номер телефону',
+            value: '+38 (098) 111 11 11',
+            button: {
+              text: 'Очистити',
+              link: 'https://www.youtube.com/',
+              isSecondary: true,
+            },
+          },
+          {
+            title: 'Електронна адреса',
+            value: 'ivanivanov@ukr.net',
+            button: {
+              text: 'Видалити',
+              link: 'https://www.youtube.com/',
+              isDanger: true,
+            },
+          },
+        ],
+      },
+//>>>>>>> master
     },
 
     footer: [
