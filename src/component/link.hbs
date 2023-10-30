@@ -1,4 +1,25 @@
+{{!--0 <a href="{{href}}">{{text}}</a> / --}}
+{{!-- ↓↑↓   ↑↓↑ --}}
+
+{{!--1 <a href="{{data.href}}">{{data.text}}</a> / --}}
+{{!-- ↓↑↓   ↑↓↑ --}}
+
+{{!--3 {{#with data}} --}}
+	{{!--3 <a href="{{href}}">{{text}}</a> / --}}
+{{!--3 {{/with}} --}}
+{{!-- ↓↑↓   ↑↓↑ --}}
+
+{{!-- <a href="{{href}}" {{#if blank}} target="_blank"{{/if}}>{{text}}</a> /    --}}
+{{!-- ↓↑↓   ↑↓↑ --}}
+
 <a href="{{href}}" {{#if blank}} target="_blank"{{/if}}>{{text}}</a> 
+
+	{{!-- {{#if line}} --}}
+		{{!-- --- --}}
+	{{!-- {{else}} --}}
+		{{!-- / --}}
+	{{!-- {{/if}} --}}
+{{!-- ↓↑↓   ↑↓↑ --}}
 
 {{#unless noLine}}
 	{{#if line}}
@@ -7,5 +28,4 @@
 		/
 	{{/if}}
 {{/unless}}
-
 

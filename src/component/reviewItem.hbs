@@ -1,0 +1,70 @@
+{{#each reviewList}}
+	<div class="card mb-5">
+		<div class="card-body">
+			
+{{!-- ==================================================================================== MAIN/ ReviewList/ title --}}
+			<ul class="list-group mb-4">
+				<li class="list-group-item">
+					{{#with title}}
+						<h6 class=""> {{userName}} </h6>
+						<p> {{caption}} </p>
+						<p> <time datetime="{{date}}"> {{date}} </time> </p>
+					{{/with}}
+				</li>
+				
+{{!-- ==================================================================================== MAIN/ ReviewList/ reviewBody --}}
+				{{#with reviewBody}}
+					<li class="list-group-item mb-2">
+						{{#with seller}}
+							<p> {{title}}: {{value}} </p>
+						{{/with}}
+
+						{{#with rating}}
+							<p> {{title}}: {{value}} </p>
+						{{/with}}
+
+						{{#each text}}
+							<p> {{this}} </p>
+						{{/each}}
+
+						{{#with advantages}}
+							<p> 
+								<strong> {{title}}: <br> </strong> 
+								{{text}} 
+							</p>
+						{{/with}}
+
+						{{#with disadvantages}}
+							<p> 
+								<strong> {{title}}: <br> </strong> 
+								{{text}} 
+							</p>
+						{{/with}}
+
+						<div class="row g-1">
+							{{#each images}}
+								<div class="col-2">
+									<img src="{{this}}" alt="{{this}}">
+								</div>
+						{{/each}}
+						</div>
+					</li>
+
+			{{#each coments}}
+				<div class="card my-2 ms-5">
+					<div class="card-body">
+					<div class="card-title"> {{userName}} </div>
+						<p class=""> {{date}} </p>
+						<p class=""> {{text}} </p>
+					</div>
+				</div>
+			{{/each}}
+				{{/with}}
+			</ul>
+
+
+
+		</div>
+	</div>
+{{/each}}
+   
