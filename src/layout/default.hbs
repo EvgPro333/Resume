@@ -20,35 +20,87 @@
 
 				<div>
 					<b> {{position}} </b>
-				</div>
-
-				<br>
+				</div>   <br>
 
 				<div>
 					<em> {{salary}} </em>
-				</div>
-
-				<br>
+				</div>   <br>
 
 				<div>
 					<address>
 						{{address}}
 					</address>
-				</div>
-
-				<br>
-				<br>
-				<hr>
+				</div>   <br> <br> <hr>
 
 			</header>
 		{{/with}}
 		{{!--! ---------------------------------------------------------------------- --}}
+		{{!--0 <nav> --}}
+			{{!--0 <a href="/skills">Skills</a>
+					<a href="/summary">Summary</a> --}}
+			{{!-- ↓↑↓   ↑↓↑ --}}
+
+			{{!--1 {{> link text="Summary" href="/summary" }}
+					{{> link text="Skills" href="/skills" }} --}}
+			{{!-- ↓↑↓   ↑↓↑ --}}
+
+			{{!--2 {{> link text="Summary" href="/summary" line=true }}
+					{{> link text="Skills" href="/skills" line=true }} --}}
+		{{!--0 </nav> --}}
+		{{!-- ↓↑↓   ↑↓↑ --}}
+
 		{{> nav}}
 		{{!--! ---------------------------------------------------------------------- --}}
+
+		{{!  ↓  ця кострукція показує куди шаблонізатору треба вставляти код з container файлу   --}}
 		{{{body}}}
 		{{!--! ---------------------------------------------------------------------- --}}
+
+		{{!--2 {{#with footer}} --}}
+			{{!--2 <footer> --}}
+				{{!--2 <hr> --}}
+				{{!--2 <br> --}}
+
+				{{!--0 {{#with social}}
+							{{> link data=email}}
+							{{> link data=phone}}
+							{{> link data=LinkedIn}}
+						{{/with}} --}}
+				{{!-- ↓↑↓   ↑↓↑ --}}
+
+				{{!--1 {{#with social}}
+					{{> link text=email.text href=email.href}}
+					{{> link text=phone.text href=phone.href}}
+					{{> link text=LinkedIn.text href=LinkedIn.href}}
+				{{/with}} --}}
+				{{!-- ↓↑↓   ↑↓↑ --}}
+
+				{{!--3 <div>
+					{{#with social}}
+						{{> link text=email.text href=email.href blank=true }}
+						{{> link text=phone.text href=phone.href blank=true }}
+						{{> link text=LinkedIn.text href=LinkedIn.href blank=true }}
+					{{/with}}
+				</div> <br> --}}
+
+				
+				{{!--3 <div> --}}
+					{{!-- -   ????????????????????????????????? endpoint--}}
+					{{!--4 <em>Copyright {{headers.name.firstname}}</em> --}}
+					{{!-- ↓↑↓   ↑↓↑ --}}
+
+					{{!--5 <em>Copyright {{../header/name/firstname}}</em> --}}
+					{{!-- ↓↑↓   ↑↓↑ --}}
+
+					{{!--6 <em>Copyright by {{../header/name/firstname}} {{../header/name/lastname}}</em> --}}
+				{{!--3 </div> --}}
+			{{!--2 </footer> --}}
+		{{!--2 {{/with}} --}}
+		{{!-- ↓↑↓   ↑↓↑ --}}
+
 		{{> footer}}
 		{{!--! ---------------------------------------------------------------------- --}}
+
 		{{!-- ↙ підключаємо BOOTSTRAP частина-2--}}
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 	</body>

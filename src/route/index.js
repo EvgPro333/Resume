@@ -3,7 +3,7 @@ const express = require('express')
 // Cтворюємо роутер - місце, куди ми підключаємо ендпоїнти
 const router = express.Router()
 
-// ================================================================ my var
+// ================================================================ my var                        |
 var header = {
   name: {
     firstname: 'Dmytro',
@@ -43,27 +43,84 @@ router.get('/', function (req, res) {
 // ================================================================ summary
 router.get('/summary', function (req, res) {
   res.render('summary', {
+    //                                                         ↙ сюди вводимо JSON дані
+    // 1. title: 'Dmytro Ivanov | Resume',
+    //  ↓↑↓   ↑↓↑ - title - розділили на title (назва сторінки та слово біля ім'я) та name (ім'я)
+    // 2. title: 'resume',
+    //  ↓↑↓   ↑↓↑ - title визначили як page/title назва сторінки
     page: {
       title: 'resume | Summary',
     },
     // !                          end page   ----------------------
+    // ||| ||| ||| ||| - роздылили на page та header
+
+    // 3 header: {
+    // 2	name: {
+    //		firstname: 'Dmytro',
+    //		lastname: 'Ivanov',
+    //  },
+    // 2	position: 'Junior Fullstack JS Developer',
+
+    //  ↓↓↓   ↓↓↓   ↓↓↓   ↓↓↓ - дописали
+    // 3	salary: '600$ per month',
+    //                              ↓↑↓   ↑↓↑ - header - визначили як змінну header
+    //                               яка повторюється в деяких endpoints (skills, education, work)
     header,
     // !                          end header   ----------------------
     main: {
       summary: {
         title: 'Summary',
         text: `Open-minded for new technologies, with 1 years of experience in development. Whenever I start to
-				work on a new project I learn the domain and try to understand the idea of the project. Good team
-				player, every colleague is a friend to me.`,
+  work on a new project I learn the domain and try to understand the idea of the project. Good team
+  player, every colleague is a friend to me.`,
       },
       experience: {
         title: 'Other experience',
         text: `Pet project for parsing sport betting data from different platforms ( odds ) and sport statistics (
-							tournament position, goals etc), analyzing by simple mathematics models and preparing probability
-							for such events like: money line - first win / draw / second win, totals etc.`,
+  tournament position, goals etc), analyzing by simple mathematics models and preparing probability
+  for such events like: money line - first win / draw / second win, totals etc.`,
       },
     },
     // !                          end main   ----------------------
+    //  social: {
+    //	email: {
+    //		text: 'dmytro@mail.com',
+    //		href: 'mailto:dmytro@mail.com',
+    // },
+    //	phone: {
+    //		text: '+380670000123',
+    //		href: 'tel:+380670000123',
+    // },
+    //	LinkedIn: {
+    //		text: 'LinkedIn',
+    //		href: 'https://www.linkedin.com/in/dmytro-test',
+    // },
+    //  },
+
+    //  footer: {
+    // social: {
+    //   email: {
+    //  text: 'dmytro@mail.com',
+    //  href: 'mailto:dmytro@mail.com',
+    //   },
+    //   phone: {
+    //  text: '+380670000123',
+    //  href: 'tel:+380670000123',
+    //   },
+    //   LinkedIn: {
+    //  text: 'LinkedIn',
+    //  href: 'https://www.linkedin.com/in/dmytro-test',
+    //   },
+    // },
+    //  },
+    //   /4summery ???????? copyright типу так повинно було бути? але є в header - не виходить!!!
+    //   headers: {
+    //     name: {
+    //       firstname: 'Dmytroooooo',
+    //     },
+    //   },
+
+    //  ↓↑↓   ↑↓↑ - footer - визначили як змінну footer яка повторюється в деяких endpoints (skills, education, work)
     footer,
     // !                          end footer   ----------------------
   })
@@ -442,7 +499,7 @@ router.get('/bio', function (req, res) {
     contributions: {
       title: 'Inventions',
       description:
-        'Leonardo designed and invented a wide variety of machines and devices, including a helicopter, a diving suit, and a self-propelled cart. Many of his inventions were centuries ahead of their time.',
+        'Leonardo designed and invented a wide variety of machines and devices, including a helicopter, a diving suit, and a self-propelled cart. Many of his       inventions were centuries ahead of their time.',
       year: 'Late 15th to early 16th century',
       field: 'Invention',
     },
@@ -1165,7 +1222,7 @@ router.get('/task22', function (req, res) {
       about_us: {
         title_list: {
           main: 'InnovaMind',
-          sub: 'InnovaMind is a forward-thinking startup focused on innovation. We are dedicated to creating efficient and powerful software through the use of first-class functions.',
+          sub: 'InnovaMind is a forward-thinking startup focused on innovation. We are dedicated to creating efficient and powerful software through the use of       first-class functions.',
         },
         button: { text: 'Show more' },
       },
@@ -1235,7 +1292,7 @@ router.get('/task31', function (req, res) {
     header: {
       title: 'Welcome to Our Website',
       description:
-        'We offer innovative solutions to help grow your business. Our team of experts is committed to providing tailored strategies that deliver the best results.',
+        'We offer innovative solutions to help grow your business. Our team of experts is committed to providing tailored strategies that deliver the best results.      ',
       button: {
         text: 'Learn More',
         link: 'https://www.youtube.com/',
@@ -1251,7 +1308,7 @@ router.get('/task31', function (req, res) {
           },
           title: 'New York City',
           description:
-            'New York City comprises 5 boroughs sitting where the Hudson River meets the Atlantic Ocean. At its core is Manhattan, a densely populated borough that’s among the world’s major commercial, financial and cultural centers. Its iconic sites include skyscrapers such as the Empire State Building and sprawling Central Park.',
+            'New York City comprises 5 boroughs sitting where the Hudson River meets the Atlantic Ocean. At its core is Manhattan, a densely populated borough that’s among the world’s major commercial, financial and cultural centers. Its iconic sites include skyscrapers such as the Empire State Building and       sprawling Central Park.',
           button: {
             text: 'Read',
             href: 'https://github.com/',
@@ -1264,7 +1321,7 @@ router.get('/task31', function (req, res) {
           },
           title: 'Paris',
           description:
-            "Paris, France's capital, is a major European city and a global center for art, fashion, gastronomy, and culture. Its 19th-century cityscape is crisscrossed by wide boulevards and the River Seine. Beyond such landmarks as the Eiffel Tower and the 12th-century, Gothic Notre-Dame cathedral, the city is known for its cafe culture, haute couture fashion houses, and designer boutiques along the Rue du Faubourg Saint-Honoré.",
+            "Paris, France's capital, is a major European city and a global center for art, fashion, gastronomy, and culture. Its 19th-century cityscape is crisscrossed by wide boulevards and the River Seine. Beyond such landmarks as the Eiffel Tower and the 12th-century, Gothic Notre-Dame cathedral, the       city is known for its cafe culture, haute couture fashion houses, and designer boutiques along the Rue du Faubourg Saint-Honoré.",
           button: {
             text: 'Read',
             href: 'https://google.com/',
@@ -1277,7 +1334,7 @@ router.get('/task31', function (req, res) {
           },
           title: 'Tokyo',
           description:
-            "Tokyo, Japan’s bustling capital, mixes the ultramodern and the traditional, from neon-lit skyscrapers to historic temples. The opulent Meiji Shinto Shrine is known for its towering gate and surrounding woods. The Imperial Palace sits amid large public gardens. The city's many museums offer exhibits ranging from classical art (in the Tokyo National Museum) to a reconstructed kabuki theater (in the Edo-Tokyo Museum).",
+            "Tokyo, Japan’s bustling capital, mixes the ultramodern and the traditional, from neon-lit skyscrapers to historic temples. The opulent Meiji Shinto Shrine is known for its towering gate and surrounding woods. The Imperial Palace sits amid large public gardens. The city's many museums offer exhibits       ranging from classical art (in the Tokyo National Museum) to a reconstructed kabuki theater (in the Edo-Tokyo Museum).",
           button: {
             text: 'Read',
             href: 'https://github.com/',
@@ -1290,7 +1347,7 @@ router.get('/task31', function (req, res) {
           },
           title: 'Sydney',
           description:
-            "Sydney, capital of New South Wales and one of Australia's largest cities, is best known for its harborfront Opera House, with a distinctive sail-like design. Massive Darling Harbour and the smaller Circular Quay port are hubs of waterside life, with the arched Harbour Bridge and esteemed Royal Botanic Garden nearby. Sydney Tower’s outdoor platform, the Skywalk, offers 360-degree views of the city and suburbs.",
+            "Sydney, capital of New South Wales and one of Australia's largest cities, is best known for its harborfront Opera House, with a distinctive sail-like design. Massive Darling Harbour and the smaller Circular Quay port are hubs of waterside life, with the arched Harbour Bridge and esteemed Royal       Botanic Garden nearby. Sydney Tower’s outdoor platform, the Skywalk, offers 360-degree views of the city and suburbs.",
           button: {
             text: 'Read',
             href: 'https://github.com/',
@@ -1352,25 +1409,25 @@ router.get('/task31', function (req, res) {
           header: 'Meditation',
           title: 'The Benefits of Meditation',
           description:
-            'Meditation can help reduce stress, anxiety, and depression, and improve overall well-being. Studies have also shown that regular meditation practice can enhance cognitive function and even boost the immune system.',
+            'Meditation can help reduce stress, anxiety, and depression, and improve overall well-being. Studies have also shown that regular meditation practice       can enhance cognitive function and even boost the immune system.',
         },
         {
           header: 'Hydration',
           title: 'The Importance of Hydration',
           description:
-            'Drinking enough water is essential for good health. Dehydration can lead to a range of symptoms, including fatigue, headaches, and constipation. It can also increase the risk of kidney stones and other health problems.',
+            'Drinking enough water is essential for good health. Dehydration can lead to a range of symptoms, including fatigue, headaches, and constipation. It       can also increase the risk of kidney stones and other health problems.',
         },
         {
           header: 'Yoga',
           title: 'The Benefits of Yoga',
           description:
-            'Yoga can improve flexibility, strength, and balance, and help reduce stress and anxiety. It has also been shown to improve heart health and promote a sense of well-being.',
+            'Yoga can improve flexibility, strength, and balance, and help reduce stress and anxiety. It has also been shown to improve heart health and promote a       sense of well-being.',
         },
         {
           header: 'Sunscreen',
           title: 'The Importance of Sunscreen',
           description:
-            "Protecting your skin from the sun's harmful rays is crucial for reducing the risk of skin cancer and premature aging. Experts recommend using a broad-spectrum sunscreen with an SPF of at least 30 and reapplying every two hours.",
+            "Protecting your skin from the sun's harmful rays is crucial for reducing the risk of skin cancer and premature aging. Experts recommend using a       broad-spectrum sunscreen with an SPF of at least 30 and reapplying every two hours.",
         },
       ],
     },
@@ -1486,14 +1543,14 @@ router.get('/shophome', function (req, res) {
         {
           title: 'COVID-19 Vaccinations Begin in Europe',
           description:
-            'As the world continues to grapple with the ongoing COVID-19 pandemic, Europe begins its vaccination rollout, with healthcare workers and the elderly among the first to receive the vaccine.',
+            'As the world continues to grapple with the ongoing COVID-19 pandemic, Europe begins its vaccination rollout, with healthcare workers and the elderly       among the first to receive the vaccine.',
           isTop: false,
           isNew: false,
         },
         {
           title: 'Tesla Stock Surges After Record Sales',
           description:
-            "Tesla's stock price jumps 10% following the company's announcement of record sales in the last quarter, thanks in part to strong demand for its electric vehicles.",
+            "Tesla's stock price jumps 10% following the company's announcement of record sales in the last quarter, thanks in part to strong demand for its       electric vehicles.",
           isTop: true,
           isNew: true,
         },
@@ -1501,14 +1558,14 @@ router.get('/shophome', function (req, res) {
           title:
             'New Study Shows Benefits of Meditation for Mental Health',
           description:
-            'A new study published in the Journal of the American Medical Association finds that practicing mindfulness meditation can lead to improved mental health outcomes for people struggling with depression and anxiety.',
+            'A new study published in the Journal of the American Medical Association finds that practicing mindfulness meditation can lead to improved mental       health outcomes for people struggling with depression and anxiety.',
           isTop: false,
           isNew: false,
         },
         {
           title: 'NASA Launches New Mars Rover',
           description:
-            "NASA's Perseverance rover successfully launches on a mission to explore Mars, with the goal of collecting samples of the planet's surface and searching for signs of ancient microbial life.",
+            "NASA's Perseverance rover successfully launches on a mission to explore Mars, with the goal of collecting samples of the planet's surface and       searching for signs of ancient microbial life.",
           isTop: false,
           isNew: true,
         },
@@ -1516,7 +1573,7 @@ router.get('/shophome', function (req, res) {
           title:
             'GameStop Shares Soar as Reddit Traders Rally',
           description:
-            'Shares of GameStop surge as amateur traders on the social media platform Reddit rally to drive up the price, in what some are calling a battle between Wall Street and Main Street.',
+            'Shares of GameStop surge as amateur traders on the social media platform Reddit rally to drive up the price, in what some are calling a battle between       Wall Street and Main Street.',
           isTop: false,
           isNew: false,
         },
@@ -1524,7 +1581,7 @@ router.get('/shophome', function (req, res) {
           title:
             'UK Announces Plan to Ban Sale of Gas-Powered Cars by 2030',
           description:
-            'In an effort to combat climate change, the UK government announces a plan to ban the sale of new gas-powered cars and vans by 2030, with hybrid vehicles to follow in 2035.',
+            'In an effort to combat climate change, the UK government announces a plan to ban the sale of new gas-powered cars and vans by 2030, with hybrid       vehicles to follow in 2035.',
           isTop: true,
           isNew: false,
         },
@@ -1532,14 +1589,14 @@ router.get('/shophome', function (req, res) {
           title:
             'New Study Shows Link Between Exercise and Longevity',
           description:
-            'A new study published in the Journal of the American Medical Association suggests that regular exercise can help people live longer, with participants who exercised regularly having a lower risk of premature death.',
+            'A new study published in the Journal of the American Medical Association suggests that regular exercise can help people live longer, with participants       who exercised regularly having a lower risk of premature death.',
           isTop: false,
           isNew: false,
         },
         {
           title: 'Amazon Expands Grocery Delivery Service',
           description:
-            'Amazon announces an expansion of its grocery delivery service, with plans to offer free delivery to Prime members on orders over $35 and to expand its selection of fresh and organic produce.',
+            'Amazon announces an expansion of its grocery delivery service, with plans to offer free delivery to Prime members on orders over $35 and to expand its       selection of fresh and organic produce.',
           isTop: false,
           isNew: true,
         },
@@ -2741,9 +2798,6 @@ router.get('/shopprofile', function (req, res) {
         ],
       },
       //  buttons - був тут
-      // вивів
-      //-------------------------------------------------------------
-      // не вивів
       recipients: {
         title: 'Отримувачі',
         users: [
@@ -2895,6 +2949,291 @@ router.get('/shopprofile', function (req, res) {
   })
 })
 
+// ================================================================ shopreview
+router.get('/shopreview', function (req, res) {
+  res.render('shopreview', {
+    layout: 'shop',
+    navigation: {
+      links: [
+        {
+          text: 'Home',
+          href: 'https://github.com/',
+        },
+        {
+          text: 'Contacts',
+          href: 'https://www.google.com/',
+        },
+        {
+          text: 'Help',
+          href: 'https://www.youtube.com/',
+        },
+      ],
+    },
+    formBlock: {
+      header: 'Відгуки покупців про Ноут',
+      rating: {
+        title: 'Оцінка',
+        value: '4.5/5',
+      },
+      actionBlock: {
+        tabs: [
+          { text: 'Про товар' },
+          { text: 'Характеристики' },
+          { text: 'Відгуки', isActive: true },
+        ],
+        report: {
+          title: 'Залиште відгук про товар',
+          button: {
+            text: 'Написати відгук',
+            link: 'https://www.youtube.com/',
+          },
+        },
+      },
+      feedbackBlock: {
+        title:
+          'Хочете поділитись своєю думкою про наш магазин?',
+        buttons: [
+          {
+            text: 'Додати відгук',
+            isWarning: true,
+            link: 'https://www.youtube.com/',
+          },
+          {
+            text: 'Позитивні відгуки',
+            isSuccess: true,
+            link: 'https://www.youtube.com/',
+          },
+          {
+            text: 'Негативні відгуки',
+            isDanger: true,
+            link: 'https://www.youtube.com/',
+          },
+        ],
+      },
+      goodsInfo: {
+        photo: 'https://picsum.photos/110/100',
+        name: 'Ноут Asus',
+        price: '25 000 ₴',
+        inMarket: true,
+        buttons: [
+          {
+            text: 'Купити',
+            isPrimary: true,
+            link: 'https://www.youtube.com/',
+          },
+          {
+            text: 'Купити в кредит',
+            isSecondary: true,
+            link: 'https://www.youtube.com/',
+          },
+        ],
+        seller: {
+          title: 'Продавець',
+          value: 'Machinery',
+        },
+      },
+    },
+
+    reviewList: [
+      {
+        title: {
+          userName: 'Іван Іванов',
+          caption: 'Відгук покупця',
+          date: '1 січня 2023',
+        },
+        reviewBody: {
+          seller: {
+            title: 'Продавець',
+            value: 'Machinery',
+          },
+          rating: {
+            title: 'Оцінка',
+            value: '5/5',
+          },
+          text: [
+            "Цей ноутбук має гарний дизайн та добре виконує свої основні функції. Швидкість роботи та продуктивність в цілому є на задовільному рівні. Крім того,       присутній достатній обсяг пам'яті та потужність акумулятора.",
+            ' Однак, можливі проблеми з перегрівом під час тривалого використання, та може бути недостатньої ємності жорсткого диска для потреб користувача. Крім       того, ціна може бути дещо високою порівняно з аналогічними моделями.',
+          ],
+          advantages: {
+            title: 'Переваги',
+            text: 'Дизайн, швидкість роботи, обсяг пам’яті, акумулятор',
+          },
+          disadvantages: {
+            title: 'Недоліки',
+            text: 'Перегрів, ємкість жосткого диску',
+          },
+          images: [
+            'https://picsum.photos/110/100',
+            'https://picsum.photos/110/100',
+            'https://picsum.photos/110/100',
+          ],
+          coments: [
+            {
+              userName: 'Користувач',
+              date: '1 січня 2023',
+              text: 'Дякую за відгук, я подумаю про недоліки, про які ви згадували, перш ніж зробити покупку.',
+            },
+            {
+              userName: 'Користувач',
+              date: '3 січня 2023',
+              text: 'Дякую за корисний відгук! Це допомогло мені зробити вибір щодо покупки ноутбука.',
+            },
+            {
+              userName: 'Користувач',
+              date: '10 січня 2023',
+              text: 'Дякую за відгук, але я хотів би дізнатися більше деталей про проблеми з перегрівом, щоб зробити зважений вибір перед покупкою.',
+            },
+          ],
+        },
+      },
+      {
+        title: {
+          userName: 'Петро Петров',
+          caption: 'Відгук покупця',
+          date: '1 січня 2023',
+        },
+        reviewBody: {
+          seller: {
+            title: 'Продавець',
+            value: 'Machinery',
+          },
+          rating: {
+            title: 'Оцінка',
+            value: '5/5',
+          },
+          text: [
+            "Цей ноутбук має гарний дизайн та добре виконує свої основні функції. Швидкість роботи та продуктивність в цілому є на задовільному рівні. Крім того,       присутній достатній обсяг пам'яті та потужність акумулятора.",
+          ],
+          advantages: {
+            title: 'Переваги',
+            text: 'Обсяг пам’яті, акумулятор',
+          },
+          disadvantages: {
+            title: 'Недоліки',
+            text: 'Не виявлено',
+          },
+          images: ['https://picsum.photos/110/100'],
+          coments: [
+            {
+              userName: 'Користувач',
+              date: '1 січня 2023',
+              text: 'Дякую за відгук, я подумаю про недоліки, про які ви згадували, перш ніж зробити покупку.',
+            },
+          ],
+        },
+      },
+    ],
+
+    service: {
+      title: 'Our Services',
+      description:
+        'We offer a variety of services to meet your needs, including web design, content creation, and social media management.',
+      buttons: [
+        {
+          text: 'Show More',
+          link: 'https://www.youtube.com/',
+        },
+      ],
+    },
+
+    footer: [
+      [
+        {
+          text: 'Home',
+          link: 'https://www.youtube.com/',
+        },
+        {
+          text: 'Trending',
+          link: 'https://www.youtube.com/feed/trending',
+        },
+        {
+          text: 'Subscriptions',
+          link: 'https://www.youtube.com/feed/subscriptions',
+        },
+        {
+          text: 'Library',
+          link: 'https://www.youtube.com/feed/library',
+        },
+      ],
+      [
+        {
+          text: 'History',
+          link: 'https://www.youtube.com/feed/history',
+        },
+        {
+          text: 'Your Videos',
+          link: 'https://www.youtube.com/feed/my_videos',
+        },
+        {
+          text: 'Live',
+          link: 'https://www.youtube.com/live',
+        },
+        {
+          text: 'Settings',
+          link: 'https://www.youtube.com/account',
+        },
+      ],
+      [
+        {
+          text: 'Watch Later',
+          link: 'https://www.youtube.com/playlist?list=WL',
+        },
+        {
+          text: 'Liked Videos',
+          link: 'https://www.youtube.com/playlist?list=LL',
+        },
+        {
+          text: 'Music',
+          link: 'https://www.youtube.com/music',
+        },
+        {
+          text: 'Gaming',
+          link: 'https://www.youtube.com/gaming',
+        },
+      ],
+      [
+        {
+          text: 'Sports',
+          link: 'https://www.youtube.com/channel/UCo_q6aOlvPH7M-j_XGWVgXg',
+        },
+        {
+          text: 'News',
+          link: 'https://www.youtube.com/news',
+        },
+        {
+          text: 'Fashion & Beauty',
+          link: 'https://www.youtube.com/channel/UC1x8rV_f-2yPpzlN0JWZXIQ',
+        },
+        {
+          text: 'Learning',
+          link: 'https://www.youtube.com/learning',
+        },
+      ],
+      [
+        {
+          text: 'Report History',
+          link: 'https://www.youtube.com/feed/history/report_history',
+        },
+        {
+          text: 'Help',
+          link: 'https://support.google.com/youtube/?hl=en',
+        },
+        {
+          text: 'Send Feedback',
+          link: 'https://support.google.com/youtube/answer/4347644?hl=en',
+        },
+        {
+          text: 'About',
+          link: 'https://www.youtube.com/about/',
+        },
+      ],
+    ],
+  })
+})
+
 // ================================================================
 
+// вивів
+//-------------------------------------------------------------
+// не вивів
 module.exports = router
