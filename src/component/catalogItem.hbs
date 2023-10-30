@@ -1,0 +1,132 @@
+<div class="row gy-2 gx-4">
+	{{#each goodsList}}
+		<div class="card col-6">
+
+{{!-- ========================================================================================= GOODSLIST/ image --}}
+			<img class="card-img-top" src="{{img}}" alt="picture">
+			<div class="card-body">
+				<h4 class="card-title mb-4 "> 
+					{{#if isHot}}
+						<span class="text-capitalize text-bg-warning badge rouded-pill p-2 px-3 "> 
+							hot!
+						</span> 
+					{{/if}} 
+
+					{{#if isNew}}
+						<span class="text-capitalize text-bg-primary badge rouded-pill p-2 px-3"> 
+							нове 
+						</span> 
+					{{/if}} 
+				</h4>
+
+				<div class="mb-3">
+					<p>
+						{{#if isFast}} 
+							<span class="btn text-bg-success p-2 px-3"> 
+								Швидка доставка
+							</span> 
+						{{/if}}
+					</p>
+				
+					<p>
+						{{#if isFree}}
+							<span class="btn text-bg-secondary p-2 px-3 "> 
+								Безкоштовна доставка
+							</span> 
+						{{/if}} 
+					</p>
+				</div>
+
+{{!-- ========================================================================================= GOODSLIST/ name --}}
+				<div>
+					<h4> {{name}} </h4>
+
+{{!-- ========================================================================================= GOODSLIST/ review --}}
+					{{#with review}}
+						<p> {{amount}} {{text}} </p>
+					{{/with}}
+
+{{!-- ========================================================================================= GOODSLIST/ price --}}
+					<h3> {{price}} </h3>
+
+{{!-- ========================================================================================= GOODSLIST/ delivery --}}
+					<p> {{delivery}} </p>
+				</div>
+			</div>
+			
+{{!-- ========================================================================================= GOODSLIST/ buttons --}}
+			{{#each buttons}}
+				<div class="ps-4 mb-2 {{#if @last}} mb-4 {{/if}}">
+					<a href="{{link}}" class="{{#if isPrimary}} btn btn-primary {{/if}}
+														{{#if isSecondary}} btn btn-secondary {{/if}}"> 
+						{{text}} 
+					</a>
+				</div>
+			{{/each}}
+
+{{!-- ========================================================================================= GOODSLIST/ characteristics --}}
+			<ul>
+				{{#each characteristics}}
+					<li class="mb-1">
+						<p> {{title}}: {{value}} </p>
+					</li>
+				{{/each}}
+			</ul>
+		</div>
+	{{/each}}
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{!-- ==================ряд --}}
+{{!-- <div class="row mb-4"> --}}
+	{{!-- <div class="card row"> --}}
+
+
+
+
+		{{!-- <div class="row"> --}}
+
+
+{{!-- ==================колока --}}
+
+			{{!-- <div class="col-2"> --}}
+			{{!-- </div> --}}
+
+
+
+			{{!-- <div class="card-body"> --}}
+				{{!-- <div class="col-8"> --}}
+				{{!-- </div> --}}
+{{!-- ========================================================================================= GOODSbLOCK/ buttons --}}
+				{{!-- <div class="col-2"> --}}
+				{{!-- </div> --}}
+			{{!-- </div> --}}
+
+				
+
+
+
+		{{!-- </div> --}}
+
+
+
+	{{!-- </div> --}}
+{{!-- </div> --}}
